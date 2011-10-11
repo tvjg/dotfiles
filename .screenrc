@@ -1,2 +1,9 @@
-caption always "%{= kw}%-w%{= BW}%n %t%{-}%+w %-= %c"
+startup_message off
+defscrollback 30000
+
+autodetach on # Autodetach session on hangup instead of terminating screen completely
+
+altscreen on # Fixes text left behind after closing some apps like nano
+
+caption always "%{= kw}%-w%{= BW}%n %t%{-}%+w %-="
 vbell off
