@@ -1,15 +1,25 @@
 set nocompatible  " Don't emulate vi. For vim-align
 
 filetype off
-call pathogen#runtime_append_all_bundles() 
+call pathogen#infect() 
 call pathogen#helptags()
 
+if has('win32') || has('win64')
+  behave mswin
+
+  " http://cfc.kizzx2.com/index.php/gvim-e303-unable-to-open-swap-file-for-no-name-recovery-impossible/ "
+  set directory=.,$VIM\vimfiles\tmp
+endif
 
 set hidden   " Background buffer without writing to disk
 set autoread " Re-read on file change
 
 " Tab complete up to the point of ambiguity and cycle 
 set wildmode=list:longest
+
+" Show nice info in ruler
+set ruler
+set laststatus=2
 
 " Begin scroll three lines from edge 
 set scrolloff=3
