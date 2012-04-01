@@ -1,6 +1,8 @@
 set nocompatible  " Don't emulate vi. For vim-align
 
 filetype off
+
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect() 
 call pathogen#helptags()
 
