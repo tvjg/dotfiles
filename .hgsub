@@ -1,2 +1,3 @@
 .vim/bundle/vim-pathogen = [git]https://github.com/tpope/vim-pathogen.gitA
 .vim/bundle/nerdtree = [git]https://github.com/scrooloose/nerdtree.git
+.vim/bundle/vim-vividchalk = [git]https://github.com/tpope/vim-vividchalk.git
