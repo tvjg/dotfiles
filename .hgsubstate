@@ -1,3 +1,5 @@
 205367ab3f46dcc88b6ebb819a276e793a21e995 .vim/bundle/nerdtree
+fa5fdeeea25269c3e83262c03dfa1ccd27dbd3c9 .vim/bundle/vim-align
+3490c63d6827eb1c5fa31e51f090a7d6ca4bc563 .vim/bundle/vim-haml
 c9fb89dd6efdeedb95c411ec78b3a9493602d33d .vim/bundle/vim-pathogen
 fd696065c7b27e8fca91907ba51151a887c36803 .vim/bundle/vim-vividchalk
