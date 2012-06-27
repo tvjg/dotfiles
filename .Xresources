@@ -1,0 +1,53 @@
+!!colors ripped from rezza: http://metawire.org/~rezza/index.php
+*foreground:     rgb:dd/dd/dd
+*background:     rgb:22/22/22
+!black
+*color0:         rgb:19/19/19
+*color8:         rgb:25/25/25
+!red
+*color1:         rgb:80/32/32
+*color9:         rgb:98/2b/2b
+!green
+*color2:         rgb:5b/76/2f
+*color10:        rgb:89/b8/3f
+!brown/yellow
+*color3:         rgb:aa/99/43
+*color11:        rgb:ef/ef/60
+!blue
+*color4:         rgb:32/4c/80
+*color12:        rgb:2b/4f/98
+!magenta
+*color5:         rgb:70/6c/9a
+*color13:        rgb:82/6a/b1
+!cyan
+*color6:         rgb:92/b1/9e
+*color14:        rgb:a1/cd/cd
+!white
+*color7:         rgb:ff/ff/ff
+*color15:        rgb:dd/dd/dd
+
+! fonts
+! run "fc-list" for a list of available fonts
+URxvt.font: xft:Dina:pixelsize=14
+!URxvt.boldFont: xft:Inconsolata:bold:pixelsize=14
+
+!------------
+!True Transparency
+!------------
+!set to 32-bit for real transparency
+urxvt*depth: 32
+urxvt*background: [85]#111111
+!rgba:1111/1111/1111/dddd
+!urxvt*transparent: True
+
+URxvt*scrollBar: False
+URxvt*scrollTtyOutput: False
+URxvt*scrollTtyKeypress: True
+URxvt*secondaryScroll: True # Enable Shift-PageUp/Down in screen
+URxvt*saveLines: 8000
+
+URxvt*urgentOnBell: True
+
+Xft*dpi: 96
+Xft*antialias: true	
+Xft*hinting: full
