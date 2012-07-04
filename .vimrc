@@ -120,5 +120,8 @@ if has('autocmd')
   augroup END
 
   " Kill nerdtree if it's the last open vim buffer
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+  augroup nerdtree
+    au!
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+  augroup END
 endif
