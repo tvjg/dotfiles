@@ -5,3 +5,4 @@
 .vim/bundle/vim-align = [git]https://github.com/tsaleh/vim-align.git
 .vim/bundle/tagbar = [git]https://github.com/majutsushi/tagbar.git
 .vim/bundle/vim-matchit = [git]https://github.com/tsaleh/vim-matchit.git
+.vim/bundle/ack.vim = [git]https://github.com/mileszs/ack.vim.git
