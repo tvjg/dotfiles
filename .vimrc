@@ -68,6 +68,7 @@ nnoremap j gj
 nnoremap k gk
 
 map <Leader>f :NERDTreeToggle<CR>
+nmap <Leader>t :TagbarToggle<CR>
 
 " Open vimrc for fast editing
 map <Leader>e :e! ~/.vimrc<CR> 
