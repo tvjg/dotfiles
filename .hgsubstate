@@ -5,6 +5,7 @@ d92c8b01248d612444829001b3e081629d37a1aa .vim/bundle/minibufexpl.vim
 fa5fdeeea25269c3e83262c03dfa1ccd27dbd3c9 .vim/bundle/vim-align
 528a59f26d12278698bb946f8fb82a63711eec21 .vim/bundle/vim-colors-solarized
 3490c63d6827eb1c5fa31e51f090a7d6ca4bc563 .vim/bundle/vim-haml
+827c47c10b8ce97fc8982329e4236584e73826cf .vim/bundle/vim-javascript
 8f8665e04fe377a25bbed29abf13ea66a1a0c129 .vim/bundle/vim-matchit
 c9fb89dd6efdeedb95c411ec78b3a9493602d33d .vim/bundle/vim-pathogen
 fd696065c7b27e8fca91907ba51151a887c36803 .vim/bundle/vim-vividchalk

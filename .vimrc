@@ -3,6 +3,11 @@ set nocompatible  " Don't emulate vi. For vim-align
 " Don't clobber open utility buffers like NerdTree when opening tab from miniBufExplr
 let g:miniBufExplModSelTarget = 1 
 
+" Hmtl vim indent settings
+let g:html_indent_inctags = "html,body,head,tbody"
+let g:html_indent_script1 = "inc"
+let g:html_indent_style1 = "inc"
+
 filetype off
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
