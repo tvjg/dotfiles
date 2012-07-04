@@ -67,7 +67,8 @@ set showmatch             " Matching braces
 set visualbell
 set cursorline            " Highlight current line
 filetype plugin indent on
-colorscheme vividchalk
+set background=dark
+colorscheme solarized
 
 set shortmess=tI          " Truncate beginning of filename if too long
                           " Suppress vim intro message
