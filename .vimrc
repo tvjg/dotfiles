@@ -107,6 +107,12 @@ map <Leader>e :e! ~/.vimrc<CR>
 " Hide search highlighting
 map <Leader>h :set invhls <CR>
 
+" Write buffer out with sudo
+"   http://stackoverflow.com/a/96492/623846
+if executable('sudo') && executable('tee')
+  cmap w!! %!sudo tee > /dev/null %
+endif
+
 "
 " Autocommands
 "
