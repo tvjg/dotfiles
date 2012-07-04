@@ -124,4 +124,12 @@ if has('autocmd')
     au!
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
   augroup END
+
+  " Syntax highlighting for cakephp templates
+  "   http://www.acloudtree.com/ubuntu-vim-cakephp-12-ctp-syntax-highlighting/
+  augroup highlight
+    au!
+    autocmd BufEnter *.ctp set syn=php
+  augroup END
+
 endif
