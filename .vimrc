@@ -23,6 +23,34 @@ set wildmode=list:longest
 set ruler
 set laststatus=2
 
+" Statusline
+set statusline=%<%F       "tail of the filename
+
+"display a warning if fileformat isnt unix
+set statusline+=%#warningmsg#
+set statusline+=%{&ff!='unix'?'['.&ff.']':''}
+set statusline+=%*
+
+"display a warning if file encoding isnt utf-8
+set statusline+=%#warningmsg#
+set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
+set statusline+=%*
+
+set statusline+=%h      "help file flag
+set statusline+=%r      "read only flag
+set statusline+=%m      "modified flag
+
+set statusline+=\    " Space.
+
+" Line and column position and counts.
+set statusline+=(line\ %l\/%L,\ col\ %03c)
+
+set statusline+=\    " Space.
+
+set statusline+=%=      "right align.
+
+set statusline+=%{&ft}                                  "filetype (python).
+
 " Begin scroll three lines from edge 
 set scrolloff=3
 
