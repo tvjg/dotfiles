@@ -2,5 +2,6 @@
 768cd6b908331800e7995b2f1dcb3e561f5669c2 .vim/bundle/tagbar
 fa5fdeeea25269c3e83262c03dfa1ccd27dbd3c9 .vim/bundle/vim-align
 3490c63d6827eb1c5fa31e51f090a7d6ca4bc563 .vim/bundle/vim-haml
+8f8665e04fe377a25bbed29abf13ea66a1a0c129 .vim/bundle/vim-matchit
 c9fb89dd6efdeedb95c411ec78b3a9493602d33d .vim/bundle/vim-pathogen
 fd696065c7b27e8fca91907ba51151a887c36803 .vim/bundle/vim-vividchalk
