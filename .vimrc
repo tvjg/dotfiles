@@ -1,5 +1,8 @@
 set nocompatible  " Don't emulate vi. For vim-align
 
+" Don't clobber open utility buffers like NerdTree when opening tab from miniBufExplr
+let g:miniBufExplModSelTarget = 1 
+
 filetype off
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
