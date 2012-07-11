@@ -9,3 +9,4 @@
 .vim/bundle/vim-colors-solarized = [git]https://github.com/altercation/vim-colors-solarized.git
 .vim/bundle/minibufexpl.vim = [git]https://github.com/fholgado/minibufexpl.vim.git
 .vim/bundle/vim-javascript = [git]https://github.com/pangloss/vim-javascript.git
+.vim/bundle/nerdcommenter = [git]https://github.com/scrooloose/nerdcommenter.git
