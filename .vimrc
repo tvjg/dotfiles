@@ -10,6 +10,10 @@ let g:html_indent_style1 = "inc"
 
 filetype off
 
+" To disable a plugin, add it's bundle name to the following list
+let g:pathogen_disabled = []
+call add(g:pathogen_disabled, 'nerdtree')
+
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect() 
 call pathogen#helptags()
@@ -21,8 +25,9 @@ if has('win32') || has('win64')
   set directory=.,$VIM\vimfiles\tmp
 endif
 
-set hidden   " Background buffer without writing to disk
-set autoread " Re-read on file change
+set hidden          " Background buffer without writing to disk
+set autoread        " Re-read on file change
+set guioptions=aemc " Autoselect, menu and prefer console questions over popups
 
 " Tab complete up to the point of ambiguity and cycle 
 set wildmode=list:longest
@@ -104,7 +109,7 @@ set pastetoggle=<F11> " Toggle paste mode to reduce paste indent suckage
 nnoremap j gj
 nnoremap k gk
 
-map <Leader>f :NERDTreeToggle<CR>
+"" map <Leader>f :NERDTreeToggle<CR>
 nmap <Leader>t :TagbarToggle<CR>
 
 " Open vimrc for fast editing
@@ -128,7 +133,7 @@ if has('autocmd')
   "   http://stackoverflow.com/questions/2400264/is-it-possible-to-apply-vim-configurations-without-restarting
   augroup myvimrc
     au!
-    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC | if has('gui_running') | so $MYGVIMRC | endif
+    au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC
   augroup END
 
   " Kill nerdtree if it's the last open vim buffer
