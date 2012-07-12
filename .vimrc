@@ -8,7 +8,12 @@ let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
-filetype off
+" CtrlP file finder settings
+" Remap to avoid clobbering autocompletion
+let g:ctrlp_map = '<Leader>f'
+
+" Sane ignore settings
+let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|node_modules$' 
 
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
@@ -49,20 +54,20 @@ set statusline+=%#warningmsg#
 set statusline+=%{(&fenc!='utf-8'&&&fenc!='')?'['.&fenc.']':''}
 set statusline+=%*
 
-set statusline+=%h      "help file flag
-set statusline+=%r      "read only flag
-set statusline+=%m      "modified flag
+set statusline+=%h " help file flag
+set statusline+=%r " read only flag
+set statusline+=%m " modified flag
 
-set statusline+=\    " Space.
+set statusline+=\  " Space.
 
 " Line and column position and counts.
 set statusline+=(line\ %l\/%L,\ col\ %03c)
 
-set statusline+=\    " Space.
+set statusline+=\      " Space.
 
-set statusline+=%=      "right align.
+set statusline+=%=     " right align.
 
-set statusline+=%{&ft}                                  "filetype (python).
+set statusline+=%{&ft} " filetype (python).
 
 " Begin scroll three lines from edge 
 set scrolloff=3
@@ -149,4 +154,5 @@ if has('autocmd')
     autocmd BufEnter *.ctp set syn=php
   augroup END
 
+  autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 endif
