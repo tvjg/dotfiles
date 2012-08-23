@@ -11,3 +11,4 @@
 .vim/bundle/vim-javascript = [git]https://github.com/pangloss/vim-javascript.git
 .vim/bundle/nerdcommenter = [git]https://github.com/scrooloose/nerdcommenter.git
 .vim/bundle/ctrlp.vim = [git]https://github.com/kien/ctrlp.vim.git
+.vim/bundle/css-color = [git]https://github.com/ap/vim-css-color.git
