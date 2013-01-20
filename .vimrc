@@ -1,23 +1,21 @@
 set nocompatible  " Don't emulate vi. For vim-align
 
-" Don't clobber open utility buffers like NerdTree when opening tab from miniBufExplr
-let g:miniBufExplModSelTarget = 1 
-
 " Hmtl vim indent settings
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
 " CtrlP file finder settings
-" Remap to avoid clobbering autocompletion
-let g:ctrlp_map = '<Leader>f'
-
 " Sane ignore settings
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|node_modules$' 
+
+" Remember last browsed directory 
+let g:netrw_keepdir = 0
 
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
 call add(g:pathogen_disabled, 'nerdtree')
+call add(g:pathogen_disabled, 'minibufexpl.vim')
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect() 
@@ -32,7 +30,7 @@ endif
 
 set hidden          " Background buffer without writing to disk
 set autoread        " Re-read on file change
-set guioptions=aemc " Autoselect, menu and prefer console questions over popups
+set guioptions=aec " Autoselect, menu and prefer console questions over popups
 
 " Tab complete up to the point of ambiguity and cycle 
 set wildmode=list:longest
@@ -114,8 +112,11 @@ set pastetoggle=<F11> " Toggle paste mode to reduce paste indent suckage
 nnoremap j gj
 nnoremap k gk
 
-"" map <Leader>f :NERDTreeToggle<CR>
 nmap <Leader>t :TagbarToggle<CR>
+
+" Remap to avoid clobbering autocompletion
+let g:ctrlp_map = '<Leader>f'
+map <Leader>b :CtrlPBuffer<CR>
 
 " Open vimrc for fast editing
 map <Leader>e :e! ~/.vimrc<CR> 
@@ -154,5 +155,4 @@ if has('autocmd')
     autocmd BufEnter *.ctp set syn=php
   augroup END
 
-  autocmd BufEnter * if bufname("") !~ "^\[A-Za-z0-9\]*://" | lcd %:p:h | endif
 endif
