@@ -14,8 +14,6 @@ let g:netrw_keepdir = 0
 
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
-call add(g:pathogen_disabled, 'nerdtree')
-call add(g:pathogen_disabled, 'minibufexpl.vim')
 
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect() 
@@ -140,12 +138,6 @@ if has('autocmd')
   augroup myvimrc
     au!
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC
-  augroup END
-
-  " Kill nerdtree if it's the last open vim buffer
-  augroup nerdtree
-    au!
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
   augroup END
 
   " Syntax highlighting for cakephp templates
