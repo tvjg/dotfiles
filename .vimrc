@@ -78,8 +78,11 @@ set showmatch             " Matching braces
 set visualbell
 set cursorline            " Highlight current line
 filetype plugin indent on
-set background=dark
 colorscheme solarized
+set background=dark
+
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 
 set shortmess=tI          " Truncate beginning of filename if too long
                           " Suppress vim intro message
