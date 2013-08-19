@@ -2,7 +2,7 @@ f183a345a0c10caed7684d07dabae33e007c7590 .vim/bundle/ack.vim
 089506ed89da1849485fdfcca002a42111759fab .vim/bundle/coffee-script
 f91295d92a472261cc892d7d9b20331f936462da .vim/bundle/css-color
 b5d3fe66a58a13d2ff8b6391f4387608496a030f .vim/bundle/ctrlp.vim
-f112f9b830a8f42375183c9a47965270ae8b3ae4 .vim/bundle/fugitive
+124550cfee33a1bb9a227e78ccc709317a89dae9 .vim/bundle/fugitive
 c173b85f7a99f3ccc1956040957dc279aa523a8c .vim/bundle/jellybeans.vim
 0b3d928dce8262dedfc2f83b9aeb59a94e4f0ae4 .vim/bundle/nerdcommenter
 60f25648814f0695eeb6c1040d97adca93c4e0bb .vim/bundle/tabular
