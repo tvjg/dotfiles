@@ -2,11 +2,11 @@ f183a345a0c10caed7684d07dabae33e007c7590 .vim/bundle/ack.vim
 089506ed89da1849485fdfcca002a42111759fab .vim/bundle/coffee-script
 f91295d92a472261cc892d7d9b20331f936462da .vim/bundle/css-color
 b5d3fe66a58a13d2ff8b6391f4387608496a030f .vim/bundle/ctrlp.vim
-b85a986c09b12f4709401ed5d720cb79d29c7573 .vim/bundle/fugitive
+f112f9b830a8f42375183c9a47965270ae8b3ae4 .vim/bundle/fugitive
 c173b85f7a99f3ccc1956040957dc279aa523a8c .vim/bundle/jellybeans.vim
 0b3d928dce8262dedfc2f83b9aeb59a94e4f0ae4 .vim/bundle/nerdcommenter
 60f25648814f0695eeb6c1040d97adca93c4e0bb .vim/bundle/tabular
-dec1f840fb226f6d42b0d4200e8485e64fadaa2a .vim/bundle/tagbar
+57ee79bd4ce99ae247c939a3e429dfa5163f5673 .vim/bundle/tagbar
 528a59f26d12278698bb946f8fb82a63711eec21 .vim/bundle/vim-colors-solarized
 eec1b629dc4cfa3986d20f21d4b4489732cd3f5a .vim/bundle/vim-indent-guides
 75b9896cbf7a2a3302ba22cc0dabd864763c6972 .vim/bundle/vim-javascript
