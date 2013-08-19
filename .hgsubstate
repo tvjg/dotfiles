@@ -1,6 +1,7 @@
 f183a345a0c10caed7684d07dabae33e007c7590 .vim/bundle/ack.vim
 f91295d92a472261cc892d7d9b20331f936462da .vim/bundle/css-color
 b5d3fe66a58a13d2ff8b6391f4387608496a030f .vim/bundle/ctrlp.vim
+b85a986c09b12f4709401ed5d720cb79d29c7573 .vim/bundle/fugitive
 0b3d928dce8262dedfc2f83b9aeb59a94e4f0ae4 .vim/bundle/nerdcommenter
 dec1f840fb226f6d42b0d4200e8485e64fadaa2a .vim/bundle/tagbar
 fa5fdeeea25269c3e83262c03dfa1ccd27dbd3c9 .vim/bundle/vim-align
