@@ -85,8 +85,8 @@ set visualbell
 set cursorline            " Highlight current line
 filetype plugin indent on
 set t_Co=256
-colorscheme solarized
-set background=dark
+colorscheme jellybeans 
+"set background=dark
 
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1

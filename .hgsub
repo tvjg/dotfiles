@@ -1,8 +1,8 @@
 .vim/bundle/vim-pathogen = [git]https://github.com/tpope/vim-pathogen.git
 
 # Colorschemes
-.vim/bundle/vim-vividchalk = [git]https://github.com/tpope/vim-vividchalk.git
 .vim/bundle/vim-colors-solarized = [git]https://github.com/altercation/vim-colors-solarized.git
+.vim/bundle/jellybeans.vim = [git]https://github.com/nanotech/jellybeans.vim.git
 
 # Motion
 .vim/bundle/vim-matchit = [git]https://github.com/tsaleh/vim-matchit.git
