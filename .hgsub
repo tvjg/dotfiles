@@ -13,6 +13,7 @@
 .vim/bundle/nerdcommenter = [git]https://github.com/scrooloose/nerdcommenter.git
 .vim/bundle/vim-javascript = [git]https://github.com/pangloss/vim-javascript.git
 .vim/bundle/css-color = [git]https://github.com/ap/vim-css-color.git
+.vim/bundle/coffee-script = [git]https://github.com/kchmck/vim-coffee-script.git
 
 # Codebase Navigation
 .vim/bundle/tagbar = [git]https://github.com/majutsushi/tagbar.git
