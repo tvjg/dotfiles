@@ -5,5 +5,5 @@ autodetach on # Autodetach session on hangup instead of terminating screen compl
 
 altscreen on # Fixes text left behind after closing some apps like nano
 
-caption always "%{= dw}%-w%{= RW}%n %t%{-}%+w %-="
+caption always "%{= dw}%-w%{= GW}%n %t%{-}%+w %-="
 vbell off
