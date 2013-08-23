@@ -5,10 +5,17 @@ if [[ $TERM = screen ]] && infocmp screen-256color >/dev/null 2>&1; then
   export TERM=screen-256color
 elif [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
   export TERM=gnome-256color
-elif infocmp rxvt-unicode-256color >/dev/null 2>&1; then
-  export TERM=rxvt-unicode-256color
-elif infocmp xterm-256color >/dev/null 2>&1; then
+elif [[ $TERM = xterm ]] && infocmp xterm-256color >/dev/null 2>&1; then
   export TERM=xterm-256color
 fi
 
-PS1='\e]0;\u@\h: \w\a[\u@\h \W]\$ '
+case $TERM in
+    xterm*|rxvt*|screen*)
+        TITLEBAR='\[\e]0;\u@\h: \w\a\]';
+        ;;
+    *)
+        TITLEBAR="";
+        ;;
+esac
+
+PS1="$TITLEBAR[\u@\h \W]\$ "
