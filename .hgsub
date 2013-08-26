@@ -8,6 +8,7 @@
 .vim/bundle/vim-matchit = [git]https://github.com/tsaleh/vim-matchit.git
 
 # Formatting
+.vim/bundle/emmet = [git]https://github.com/mattn/emmet-vim.git
 .vim/bundle/tabular = [git]https://github.com/godlygeek/tabular.git
 .vim/bundle/vim-indent-guides = [git]https://github.com/nathanaelkane/vim-indent-guides
 .vim/bundle/nerdcommenter = [git]https://github.com/scrooloose/nerdcommenter.git
