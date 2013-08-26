@@ -1,0 +1,9 @@
+%include .hgrc.local
+
+[pager]
+pager = LESS='FSRX' less
+
+[extensions]
+mq=
+color=
+pager=

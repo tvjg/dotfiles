@@ -1,0 +1,9 @@
+[include]
+  path = ~/.gitconfig.local
+
+[alias]
+  ci = commit
+  st = status
+
+[color]
+  ui = auto
