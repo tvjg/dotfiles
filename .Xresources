@@ -78,7 +78,7 @@ Xft*rgba: rgb
 Xft*lcdfilter: lcdlight
 
 ! run "fc-list" for a list of available fonts
-URxvt.font: xft:Dina:pixelsize=14
+URxvt.font: xft:Inconsolata:size=11
 
 !------------
 !True Transparency
