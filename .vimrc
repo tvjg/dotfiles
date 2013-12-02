@@ -19,6 +19,10 @@ if !executable('ctags')
   call add(g:pathogen_disabled, 'tagbar')
 endif
 
+if !executable('git')
+  call add(g:pathogen_disabled, 'fugitive')
+endif
+
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect() 
 call pathogen#helptags()
