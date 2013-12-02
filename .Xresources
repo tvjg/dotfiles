@@ -69,13 +69,13 @@
 *color15: S_base3
 
 ! fonts
-Xft*autohint: true
-Xft*antialias: true
+Xft*autohint: 0
+!Xft*antialias: 0
 Xft*hinting: true
-Xft*hintstyle: hintslight
-!Xft*dpi: 96
+Xft*hintstyle: hintsfull
+Xft*dpi: 96
 Xft*rgba: rgb
-Xft*lcdfilter: lcddefault
+Xft*lcdfilter: lcdlight
 
 ! run "fc-list" for a list of available fonts
 URxvt.font: xft:Dina:pixelsize=14
