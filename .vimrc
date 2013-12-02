@@ -30,6 +30,10 @@ call pathogen#helptags()
 if has('win32') || has('win64')
   behave mswin
 
+  if has("gui_running")
+    set guifont=Consolas:h10:cANSI
+  endif
+
   " http://cfc.kizzx2.com/index.php/gvim-e303-unable-to-open-swap-file-for-no-name-recovery-impossible/ "
   set directory=.,$VIM\vimfiles\tmp
 endif
