@@ -33,6 +33,7 @@ endif
 set hidden          " Background buffer without writing to disk
 set autoread        " Re-read on file change
 set guioptions=aec " Autoselect, menu and prefer console questions over popups
+set mouse=a
 
 " Tab complete up to the point of ambiguity and cycle 
 set wildmode=list:longest
