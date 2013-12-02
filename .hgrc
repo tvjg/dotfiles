@@ -7,3 +7,4 @@ pager = LESS='FSRX' less
 mq=
 color=
 pager=
+record=
