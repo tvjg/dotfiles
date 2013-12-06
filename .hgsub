@@ -12,9 +12,12 @@
 .vim/bundle/tabular = [git]https://github.com/godlygeek/tabular.git
 .vim/bundle/vim-indent-guides = [git]https://github.com/nathanaelkane/vim-indent-guides
 .vim/bundle/nerdcommenter = [git]https://github.com/scrooloose/nerdcommenter.git
+
+# Syntax
 .vim/bundle/vim-javascript = [git]https://github.com/pangloss/vim-javascript.git
 .vim/bundle/css-color = [git]https://github.com/ap/vim-css-color.git
 .vim/bundle/coffee-script = [git]https://github.com/kchmck/vim-coffee-script.git
+.vim/bundle/shebang = [git]https://github.com/vitalk/vim-shebang.git
 
 # Codebase Navigation
 .vim/bundle/tagbar = [git]https://github.com/majutsushi/tagbar.git
