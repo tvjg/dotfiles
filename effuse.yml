@@ -1,0 +1,6 @@
+exclude:
+  - 'install-deps.sh'
+  - '.*.orig'
+  - '.hg'
+  - '.hgsub'
+  - '.hgsubstate'

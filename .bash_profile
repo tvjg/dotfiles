@@ -13,6 +13,15 @@ for file in ~/.{extra,bash_prompt,bash_exports,bash_aliases,bash_functions}; do
 done
 unset file
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/bin" ]; then
+    PATH="$HOME/bin:$PATH"
+fi
+
+# init z
+# https://github.com/rupa/z
+. ~/code/z/z.sh
+
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -27,3 +36,6 @@ export LANG="en_US"
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
+
+# init rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
