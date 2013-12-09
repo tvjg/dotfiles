@@ -1,5 +1,5 @@
 exclude:
-  - 'install-deps.sh'
+  - 'bootstrap.sh'
   - '.*.orig'
   - '.hg'
   - '.hgsub'
