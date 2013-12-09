@@ -8,3 +8,6 @@ mq=
 color=
 pager=
 record=
+
+[trusted]
+groups = vboxsf
