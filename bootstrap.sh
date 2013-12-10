@@ -1,8 +1,12 @@
-echo -e "Preparing $HOME\n"
+echo -e "\e[32m"
+echo -e "Preparing $HOME"
+echo -e "\e[0m"
 
 mkdir -p ~/{bin,code}
 
-echo -e "Downloading addtional binaries.\n"
+echo -e "\e[32m"
+echo -e "Downloading addtional binaries."
+echo -e "\e[0m"
 
 curl -sL https://raw.github.com/djl/vcprompt/master/bin/vcprompt > ~/bin/vcprompt
 curl -sL https://raw.github.com/funtoo/keychain/master/keychain.sh > ~/bin/keychain
@@ -19,4 +23,6 @@ curl -sL https://get.rvm.io | bash -s stable --ruby --gems=effuse --ignore-dotfi
 
 effuse
 
-echo -e "\nSymlinked dotfiles in $HOME\n"
+echo -e "\e[32m"
+echo -e "Symlinked dotfiles in $HOME"
+echo -e "\e[0m"
