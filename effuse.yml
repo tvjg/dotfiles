@@ -2,5 +2,6 @@ exclude:
   - 'bootstrap.sh'
   - '.*.orig'
   - '.hg'
+  - '.hgignore'
   - '.hgsub'
   - '.hgsubstate'
