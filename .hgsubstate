@@ -12,5 +12,6 @@ c173b85f7a99f3ccc1956040957dc279aa523a8c .vim/bundle/jellybeans.vim
 528a59f26d12278698bb946f8fb82a63711eec21 .vim/bundle/vim-colors-solarized
 eec1b629dc4cfa3986d20f21d4b4489732cd3f5a .vim/bundle/vim-indent-guides
 75b9896cbf7a2a3302ba22cc0dabd864763c6972 .vim/bundle/vim-javascript
+05f413fcfc44f82af1c4b1c471fd81b0ccd044c0 .vim/bundle/vim-jinja
 8f8665e04fe377a25bbed29abf13ea66a1a0c129 .vim/bundle/vim-matchit
 f195ac5e402a1e7d0f75322558da36245dde59d6 .vim/bundle/vim-pathogen

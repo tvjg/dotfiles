@@ -18,6 +18,7 @@
 .vim/bundle/css-color = [git]https://github.com/ap/vim-css-color.git
 .vim/bundle/coffee-script = [git]https://github.com/kchmck/vim-coffee-script.git
 .vim/bundle/shebang = [git]https://github.com/vitalk/vim-shebang.git
+.vim/bundle/vim-jinja = [git]https://github.com/Glench/Vim-Jinja2-Syntax.git
 
 # Codebase Navigation
 .vim/bundle/tagbar = [git]https://github.com/majutsushi/tagbar.git
