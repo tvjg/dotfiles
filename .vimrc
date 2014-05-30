@@ -43,6 +43,12 @@ if has('win32') || has('win64')
   set directory=.,$VIM\vimfiles\tmp
 endif
 
+" Nicked from tpope/vim-sensible
+" Load matchit.vim, but only if the user hasn't installed a newer version.
+if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
+  runtime! macros/matchit.vim
+endif
+
 set hidden          " Background buffer without writing to disk
 set autoread        " Re-read on file change
 set guioptions=aec " Autoselect, menu and prefer console questions over popups

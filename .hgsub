@@ -4,9 +4,6 @@
 .vim/bundle/vim-colors-solarized = [git]https://github.com/altercation/vim-colors-solarized.git
 .vim/bundle/jellybeans.vim = [git]https://github.com/nanotech/jellybeans.vim.git
 
-# Motion
-.vim/bundle/vim-matchit = [git]https://github.com/tsaleh/vim-matchit.git
-
 # Formatting
 .vim/bundle/emmet = [git]https://github.com/mattn/emmet-vim.git
 .vim/bundle/tabular = [git]https://github.com/godlygeek/tabular.git
