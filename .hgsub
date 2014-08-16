@@ -11,11 +11,9 @@
 .vim/bundle/nerdcommenter = [git]https://github.com/scrooloose/nerdcommenter.git
 
 # Syntax
-.vim/bundle/vim-javascript = [git]https://github.com/pangloss/vim-javascript.git
-.vim/bundle/css-color = [git]https://github.com/ap/vim-css-color.git
-.vim/bundle/coffee-script = [git]https://github.com/kchmck/vim-coffee-script.git
 .vim/bundle/shebang = [git]https://github.com/vitalk/vim-shebang.git
 .vim/bundle/vim-jinja = [git]https://github.com/Glench/Vim-Jinja2-Syntax.git
+.vim/bundle/vim-polyglot = [git]https://github.com/sheerun/vim-polyglot.git
 
 # Codebase Navigation
 .vim/bundle/tagbar = [git]https://github.com/majutsushi/tagbar.git
