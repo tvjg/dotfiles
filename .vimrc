@@ -9,9 +9,6 @@ let g:html_indent_style1 = "inc"
 " Sane ignore settings
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|node_modules$' 
 
-" Remember last browsed directory 
-let g:netrw_keepdir = 0
-
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
 
