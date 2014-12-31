@@ -3,6 +3,7 @@
 
 [alias]
   ci = commit
+  co = checkout
   st = status
 
 [color]
