@@ -1,8 +1,8 @@
 303bceff1c8ab1145d114083582b1aeac9de7a85 .vim/bundle/ack.vim
 b5d3fe66a58a13d2ff8b6391f4387608496a030f .vim/bundle/ctrlp.vim
-fcf0f567beb26e13aa623e36bf1597e3e2880a62 .vim/bundle/emmet
+55c704bc3a977ca384aabf2848ef40a98368c16f .vim/bundle/emmet
 3223e1b09412c1e008b147474b201785203245d0 .vim/bundle/fubitive
-e7c7149434e819ed385bec004a45a222f74e3f1f .vim/bundle/fugitive
+90ee6fb5d255d14d9f12f2469f92ee50149f5b44 .vim/bundle/fugitive
 0761708c890becd3e027551068e0ae272da003e0 .vim/bundle/jellybeans.vim
 0b3d928dce8262dedfc2f83b9aeb59a94e4f0ae4 .vim/bundle/nerdcommenter
 3ab0edc062c17ec87f7729ce5f7ef016700d27f9 .vim/bundle/shebang
