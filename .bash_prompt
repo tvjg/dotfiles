@@ -1,21 +1,2 @@
 #!/bin/bash
-
-# infocmp is provided by ncurses
-if [[ $TERM = screen ]] && infocmp screen-256color >/dev/null 2>&1; then
-  export TERM=screen-256color
-elif [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then
-  export TERM=gnome-256color
-elif [[ $TERM = xterm ]] && infocmp xterm-256color >/dev/null 2>&1; then
-  export TERM=xterm-256color
-fi
-
-case $TERM in
-    xterm*|rxvt*|screen*)
-        TITLEBAR='\[\e]0;\u@\h: \w\a\]';
-        ;;
-    *)
-        TITLEBAR="";
-        ;;
-esac
-
-PS1="$TITLEBAR[\u@\h \W]\$ "
+export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[37m\]\w\[\033[m\]\$ "
