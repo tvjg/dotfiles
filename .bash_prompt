@@ -1,2 +1,28 @@
 #!/bin/bash
-export PS1="\[\033[36m\]\u\[\033[m\]@\[\033[32m\]\h:\[\033[37m\]\w\[\033[m\]\$ "
+
+case $(id -u) in
+  0)
+    # ROOT IS RED
+    USERCOLOR='\[\033[31m\]';
+    ;;
+  *)
+    # CYAN
+    USERCOLOR='\[\033[36m\]';
+    ;;
+esac
+
+GREEN='\[\033[32m\]'
+WHITE='\[\033[37m\]'
+ENDCOLOR="\[\033[m\]"
+
+# Use escape sequence to includes user@host and cwd in the title bar
+case $TERM in
+  xterm*|rxvt*|screen*)
+    TITLEBAR='\[\e]0;\u@\h: \w\a\]';
+    ;;
+  *)
+    TITLEBAR="";
+    ;;
+esac
+
+export PS1="$TITLEBAR$USERCOLOR\u$ENDCOLOR@$GREEN\h:$WHITE\W$ENDCOLOR\$ "
