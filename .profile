@@ -22,15 +22,23 @@ export PATH=/usr/local/bin:$PATH
 
 # The following line puts gnu utilities without the prefix "g" in the path
 # i.e. tar/gtar:
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+if [ -d "/usr/local/opt/coreutils" ]; then
+  export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ]; then
   export PATH="$HOME/bin:$PATH"
 fi
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+# manage ruby versions
+if [ -d "$HOME/.rbenv" ]; then
+  export PATH="$HOME/.rbenv/bin:$PATH"
+  eval "$(rbenv init -)"
+fi
 
-source ~/.nvm/nvm.sh
+# manage nodejs versions
+if [ -d "$HOME/.nvm" ]; then
+  source ~/.nvm/nvm.sh
+fi

@@ -15,8 +15,11 @@ shopt -s checkwinsize
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
-if [ -f $(brew --prefix)/etc/bash_completion ]; then
-  . $(brew --prefix)/etc/bash_completion
+# OS X bash completion
+if hash brew 2>/dev/null; then
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
 fi
 
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
