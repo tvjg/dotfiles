@@ -1,5 +1,8 @@
 .vim/bundle/vim-pathogen = [git]https://github.com/tpope/vim-pathogen.git
 
+#Editing
+.vim/bundle/surround = [git]https://github.com/tpope/vim-surround
+
 # Colorschemes
 .vim/bundle/vim-colors-solarized = [git]https://github.com/altercation/vim-colors-solarized.git
 .vim/bundle/jellybeans.vim = [git]https://github.com/nanotech/jellybeans.vim.git
@@ -20,3 +23,4 @@
 .vim/bundle/ctrlp.vim = [git]https://github.com/kien/ctrlp.vim.git
 .vim/bundle/ack.vim = [git]https://github.com/mileszs/ack.vim.git
 .vim/bundle/fugitive = [git]https://github.com/tpope/vim-fugitive.git
+.vim/bundle/fubitive = [git]https://github.com/tommcdo/vim-fubitive.git
