@@ -9,9 +9,9 @@
 # In case of screen, ensure hostname is echoed to status line
 # Must be set before PS1
 case "$TERM" in
-screen*)
-  PROMPT_COMMAND='echo -ne "\033k$HOSTNAME\033\\"'
-  ;;
+  screen*)
+    PROMPT_COMMAND="printf '\033k$(hostname -s)\033\\';"${PROMPT_COMMAND}
+    ;;
 esac
 
 # Because ~/.profile isn't invoked if this files exists,
