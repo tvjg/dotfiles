@@ -10,7 +10,7 @@
 # Must be set before PS1
 case "$TERM" in
   screen*)
-    PROMPT_COMMAND="printf '\033k$(hostname -s)\033\\';"${PROMPT_COMMAND}
+    PROMPT_COMMAND="printf '\033k$(hostname)\033\\';"${PROMPT_COMMAND}
     ;;
 esac
 
