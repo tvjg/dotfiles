@@ -6,14 +6,6 @@
 # See /usr/share/doc/bash/examples/startup-files for examples.
 # The files are located in the bash-doc package.
 
-# In case of screen, ensure hostname is echoed to status line
-# Must be set before PS1
-case "$TERM" in
-  screen*)
-    PROMPT_COMMAND="printf '\033k$(hostname)\033\\';"${PROMPT_COMMAND}
-    ;;
-esac
-
 # Because ~/.profile isn't invoked if this files exists,
 # we must source ~/.profile to get its settings:
 if [ -r ~/.profile ]; then . ~/.profile; fi
