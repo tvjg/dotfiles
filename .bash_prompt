@@ -6,20 +6,12 @@ case "$TERM" in
   screen*)
     PROMPT_COMMAND="printf '\033k${HOSTNAME}\033\\';"${PROMPT_COMMAND}
     ;;
-esac
-
-# Color the username on prompt
-case $(id -u) in
-  0)
-    # ROOT IS RED
-    USERCOLOR='\[\033[31m\]';
-    ;;
   *)
-    # ELSE IS CYAN
-    USERCOLOR='\[\033[36m\]';
+    unset PROMPT_COMMAND
     ;;
 esac
 
+CYAN='\[\033[36m\]';
 GREEN='\[\033[32m\]'
 WHITE='\[\033[37m\]'
 ENDCOLOR="\[\033[m\]"
