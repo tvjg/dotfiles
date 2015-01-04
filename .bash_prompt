@@ -1,16 +1,5 @@
 #!/bin/bash
 
-# In case of screen, ensure hostname is echoed to status line
-# Must be set before PS1
-case "$TERM" in
-  screen*)
-    PROMPT_COMMAND="printf '\033k${HOSTNAME}\033\\';"${PROMPT_COMMAND}
-    ;;
-  *)
-    unset PROMPT_COMMAND
-    ;;
-esac
-
 CYAN='\[\033[36m\]';
 GREEN='\[\033[32m\]'
 WHITE='\[\033[37m\]'
