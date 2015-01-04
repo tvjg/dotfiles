@@ -46,13 +46,18 @@ z_precmd() {
 precmd_functions+=(z_precmd)
 
 # set the tab titles for screen/tmux
-# displays hostname or hostname (running-task)
-set_command()  { printf "\033k$HOSTNAME ($1)\033\\"; }
-set_hostname() { printf "\033k$HOSTNAME\033\\"; }
+# displays hostname or hostname (running_cmd)
+before_cmd() {
+  # bash_exports adds timestamp to bash_history
+  # remove that with cut and then truncate text
+  local RUNNING_CMD=$(echo $1 | cut -d' ' -f3- | awk 'length > 12{$0=substr($0,0,13)"..."}1')
+  printf "\033k$HOSTNAME ($RUNNING_CMD)\033\\"
+}
+after_cmd() { printf "\033k$HOSTNAME\033\\"; }
 
 case "$TERM" in
   screen*)
-    precmd_functions+=(set_hostname)
-    preexec_functions+=(set_command)
+    preexec_functions+=(before_cmd)
+    precmd_functions+=(after_cmd)
     ;;
 esac
