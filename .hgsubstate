@@ -1,5 +1,6 @@
 303bceff1c8ab1145d114083582b1aeac9de7a85 .vim/bundle/ack.vim
 b5d3fe66a58a13d2ff8b6391f4387608496a030f .vim/bundle/ctrlp.vim
+c4390c5724f9d262aeba62ab69c5bc5246626c6f .vim/bundle/dispatch
 55c704bc3a977ca384aabf2848ef40a98368c16f .vim/bundle/emmet
 3223e1b09412c1e008b147474b201785203245d0 .vim/bundle/fubitive
 90ee6fb5d255d14d9f12f2469f92ee50149f5b44 .vim/bundle/fugitive
