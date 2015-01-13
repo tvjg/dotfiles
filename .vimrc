@@ -132,7 +132,7 @@ set smartcase   " a pattern contains an uppercase letter, it is case
 " Key mappings
 "
 let mapleader=","
-set pastetoggle=<F11> " Toggle paste mode to reduce paste indent suckage
+set pastetoggle=<leader>p " Toggle paste mode to reduce paste indent suckage
 
 " Navigate by editor lines, not real lines
 nnoremap j gj
