@@ -51,10 +51,12 @@ before_cmd() {
   # bash_exports adds timestamp to bash_history
   # remove that with cut and then truncate text
   local RUNNING_CMD=$(echo $1 | cut -d' ' -f3- | awk 'length > 12{$0=substr($0,0,13)"..."}1')
-  printf "\033k$HOSTNAME ($RUNNING_CMD)\033\\"
+  printf "\033k$HOSTNAME (${PWD##*/}/$RUNNING_CMD)\033\\"
 }
-after_cmd() { printf "\033k$HOSTNAME\033\\"; }
+after_cmd() { printf "\033k$HOSTNAME (${PWD##*/})\033\\"; }
 
+# TODO: Would be nice to have some kind of $SHLVL check, so that subshells
+# don't stomp tmux titles.
 case "$TERM" in
   screen*)
     preexec_functions+=(before_cmd)
