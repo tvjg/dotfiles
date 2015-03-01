@@ -42,3 +42,11 @@ fi
 if [ -d "$HOME/.nvm" ]; then
   source ~/.nvm/nvm.sh
 fi
+
+if [ -d "$HOME/.cask" ]; then
+  export PATH="$HOME/.cask/bin:$PATH"
+fi
+
+if [ -f "$HOME/.boot_jvm_options" ]; then
+  export BOOT_JVM_OPTIONS=`cat .boot_jvm_options`
+fi

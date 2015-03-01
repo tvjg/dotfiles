@@ -1,2 +1,12 @@
+# vim
 .vim/.netrwhist
 .vim/.netrwbook
+
+# emacs
+.emacs.d/auto-save-list/
+.emacs.d/backups/
+.emacs.d/.cask/
+.emacs.d/places
+.emacs.d/projectile*
+.emacs.d/tramp-autosave/
+archive-contents
