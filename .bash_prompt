@@ -15,4 +15,5 @@ case $TERM in
     ;;
 esac
 
+unset PROMPT_COMMAND
 export PS1="$TITLEBAR[$CYAN\u$ENDCOLOR@$GREEN\h $WHITE\W$ENDCOLOR]\$ "
