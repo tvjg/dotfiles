@@ -37,7 +37,7 @@ unset file
 # regexes given on the command line, in order.
 # https://github.com/rupa/z
 export _Z_NO_PROMPT_COMMAND=1
-. ~/code/z/z.sh
+. ~/bin/z
 
 # using bash-preexec means we need to manage hooking z
 z_precmd() {
