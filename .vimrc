@@ -28,7 +28,7 @@ if executable('col') && executable('man')
   nnoremap <silent>K :<C-U>exe "Man" v:count "<cword>"<CR>
 endif
 
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect() 
 call pathogen#helptags()
 
