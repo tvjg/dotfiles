@@ -27,3 +27,12 @@ function mkcdr() {
     mkdir -p -v $1
     cd $1
 }
+
+# Echo the folder name and branch of any git repo in the current directory
+function git-branches() {
+  for d in $(ls -d */ | sed "s/\/*$//"); do
+    if [ -d "$d/.git" ]; then
+      echo "${d} (`git --git-dir ${d}/.git symbolic-ref --short HEAD`)"
+    fi
+  done | column -t
+}
