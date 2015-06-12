@@ -51,8 +51,9 @@ endif
 
 set hidden          " Background buffer without writing to disk
 set autoread        " Re-read on file change
-set guioptions=aec " Autoselect, menu and prefer console questions over popups
+set guioptions=aec  " Autoselect, menu and prefer console questions over popups
 set mouse=a
+set relativenumber  " Relative line numbering
 
 " Tab complete up to the point of ambiguity and cycle 
 set wildmode=list:longest
@@ -101,6 +102,7 @@ syntax on
 set showmatch             " Matching braces
 set visualbell
 set cursorline            " Highlight current line
+set cursorcolumn          " Highlight current column
 filetype plugin indent on
 set t_Co=256
 colorscheme jellybeans 
