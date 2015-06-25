@@ -3,6 +3,7 @@
 
 (depends-on "better-defaults")
 (depends-on "cider")
+(depends-on "clojure-mode")
 (depends-on "clojure-mode-extra-font-locking")
 (depends-on "clojure-quick-repls")
 (depends-on "color-theme-sanityinc-tomorrow")

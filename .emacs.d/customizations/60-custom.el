@@ -5,6 +5,13 @@
 (setq scroll-step 1)
 (setq scroll-conservatively 5)
 
+; Tmux causes issues with Ctrl+Arrows
+; use in combination with xterm-keys in .tmux.conf to restore desired behavior
+(define-key input-decode-map "\e[1;5A" [C-up])
+(define-key input-decode-map "\e[1;5B" [C-down])
+(define-key input-decode-map "\e[1;5C" [C-right])
+(define-key input-decode-map "\e[1;5D" [C-left])
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
