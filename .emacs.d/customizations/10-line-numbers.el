@@ -1,6 +1,6 @@
-(add-hook 'prog-mode-hook 'relative-line-numbers-mode t)
-(add-hook 'prog-mode-hook 'line-number-mode t)
-(add-hook 'prog-mode-hook 'column-number-mode t)
+(global-relative-line-numbers-mode t)
+(line-number-mode t)
+(column-number-mode t)
 
 (setq relative-line-numbers-format #'padded-line-numbers)
 
