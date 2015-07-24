@@ -21,7 +21,7 @@
 (depends-on "gandalf-theme")
 (depends-on "guide-key")
 (depends-on "ido-ubiquitous")
-(depends-on "js3-mode")
+(depends-on "js2-mode")
 (depends-on "less-css-mode")
 (depends-on "magit")
 (depends-on "markdown-mode")
