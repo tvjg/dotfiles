@@ -15,8 +15,33 @@
   "f" 'find-file
   "," 'evil-repeat-find-char-reverse)
 
-;; evil only for modes that derive from prog-mode
-;(add-hook 'prog-mode-hook 'evil-local-mode)
-(evil-mode t)
+; https://github.com/bling/dotemacs/blob/061c06d18c29d09c7c87a8a1c83ac78a29f0ecb5/config/init-evil.el#L95
+(unless (display-graphic-p)
+  (evil-esc-mode))
+
+(defun my-major-mode-evil-state-adjust ()
+  (let ((evil-state-modes '(fundamental-mode
+                            text-mode
+                            prog-mode
+                            sws-mode
+                            dired-mode
+                            comint-mode
+                            log-edit-mode
+                            compilation-mode))
+        (emacs-state-modes '(debugger-mode
+                             git-rebase-mode)))
+    (when (apply 'derived-mode-p evil-state-modes)
+      (turn-on-evil-mode))
+    (when (apply 'derived-mode-p emacs-state-modes)
+      (turn-off-evil-mode))))
+
+(add-hook 'after-change-major-mode-hook #'my-major-mode-evil-state-adjust)
+
+(cl-loop for mode in '(git-commit-mode magit-blame-mode)
+         do (let ((hook (concat (symbol-name mode) "-hook")))
+              (add-hook (intern hook) `(lambda ()
+                                         (if ,mode
+                                           (evil-emacs-state)
+                                           (evil-normal-state))))))
 
 (provide '30-evil)
