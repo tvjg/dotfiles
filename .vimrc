@@ -10,7 +10,9 @@ let g:html_indent_style1 = "inc"
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|node_modules$' 
 
 " Use vim-dispatch to search the results in background
-let g:ack_use_dispatch=1
+if !has('nvim')
+  let g:ack_use_dispatch=1
+endif
 
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
