@@ -48,5 +48,5 @@ if [ -d "$HOME/.cask" ]; then
 fi
 
 if [ -f "$HOME/.boot_jvm_options" ]; then
-  export BOOT_JVM_OPTIONS=`cat .boot_jvm_options`
+  export BOOT_JVM_OPTIONS=`cat $HOME/.boot_jvm_options`
 fi
