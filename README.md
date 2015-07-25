@@ -7,41 +7,22 @@
 >
 > - [Anish Athalye](http://www.anishathalye.com/2014/08/03/managing-your-dotfiles)
 
-## Under Construction
+## Installation
 
-```
-                                  `-:++oo++:-`                                  
-                                `/ooydmmmmdyoo/`                                
-                               -oohNMdyssydMNhoo-                               
-                              /osmNd+:----:+dNmso/                              
-                            `/symNh:--::::--:hNmys/`                            
-                           `+syNNy:-::::::::-:yNNys+`                           
-                          .oshmNo:-::::::::::-:sNmhso.                          
-                         -sshmm+-::::::::::::::-ommhss.                         
-                        :sydmd+-::::::::::::::::-+dmdys-                        
-                       /yydmh/-::::::::::ohmNmho:-/dmdyy/                       
-                      +yydmh:-::::::::::oMMMMMMMo:-:hmdyy/                      
-                    `oyhddy:-:+ssssssssosMMMMMMMs::-:yddhy+`                    
-                   `oyhdds:-:oMMMMMMMMMMdhmNMNms::::-:sddhyo`                   
-                  .shhddo:-::dMMyyNMMMMMMm+/+/:::::::-:oddhhs.                  
-                 -yhhdh+-::ohMMMmMMMMMMMMMN/:::::::::::-+hdhhy-                 
-                :hhhdh/-::::sMMMMMMMMMMMMMm/::::::::::::-/hdhhh:                
-               /hhhhy/-::::oNMMMMMMMdyNMMh/::::::::::::::-/yhhhh/               
-             `+hhhhs:-:::::yMMMMMMMMhhMMm:::::::::::::::::-:shhhh+`             
-            `sddhhs:-::::::oMMMNmMMMMdNMN::::::::::::::::::-:shhdds`            
-           .yddhyo:-:::::::/MMMM+hMMMNhhhhs/::::::::::::::::-:oyhddy.           
-          -hdhyy+--:::::::::NMMMo:sMMMM/:/shho/::///:::::::::--+yyhdh.          
-         :ddhyy/-::::::::::/MMMM+:yMMMh:::::+ydyhmMNy/::::::::--/yyhdh:         
-        /dmhys/-:::::::::::dMMMy:sMMMd::::::+yNMMMMMMNy/::::::::-/syhmd/        
-       +mmhys:-:::::::::::oMMMm:oMMMd::::/ymMMMMMMMMMMMNy/:::::::-:syhmm+       
-     `ommyso:-::::::::::::dMMN+/NMMm/:/sdNMMMMMMMMMMMMMMMms:::::::-:osymmo`     
-     smmys+:-:::::::::::::+oo/::oo+/::+oooooooooooooooooooo/:::::::-:osymms     
-    /Nmys+:-sso/h+osss+yo+hs+::s++so+sso/osoysoys+soo/s+sssoh/so/sso::+symN:    
-    yNdss:::hyo:hm+dyMsNs+Mhs:oN:sNsdoNyomh/msoNdohy+sd:+hh+MsmyhsNs:::ssdNy    
-    sNmoo/::yyo/ohodydomsoNyh:/m/+msssodood:ds+mhyyyo+d+/hh/N+dyssod::/oomNs    
-    .mNhoo/::/:::::::::::::::::::::::::::::::::::::::::::::::::::::::/oohNm.    
-     -dNmyooo++++++++++++++++++++++++++++++++++++++++++++++++++++++oooymNd-     
-      `/hNMNmddddddddddddddddddddddddddddddddddddddddddddddddddddddmNMNh/`      
-  ````...-+oyyhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhyyo/-...````  
-           ````````````..................................````````````           
-```
+[dotbot][] is employed to setup symlinks and download scripts. After cloning
+this repo, run `./install` to automatically set up the development environment.
+Note that the install script is idempotent: it can safely be run multiple
+times.
+
+## Inspiration
+
+These dotfiles have been collected magpie-style from the works others have
+shared. Some of these include:
+
+- [https://github.com/anishathalye/dotfiles]()
+- [https://github.com/xero/dotfiles]()
+- [https://github.com/paulirish/dotfiles]()
+- [https://github.com/bling/dotemacs]()
+- [https://github.com/stephaneliu/dotfiles]()
+
+[dotbot]: https://github.com/anishathalye/dotbot
