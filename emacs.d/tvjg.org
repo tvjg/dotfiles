@@ -1,0 +1,173 @@
+#+TITLE: John Guidry's Emacs Configuration
+#+AUTHOR: John Guidry
+
+* Usage
+
+** Commentary
+
+Any variables, functions, or macros defined in this configuration
+are "namespaced" with a prefix of ~tvjg/~. This is only a convention
+for easily distinguishing between built-in functions and those
+defined in this configuration or another package, and has no other
+special significance.
+
+* Emacs Initialization
+
+** Package Sources
+
+#+BEGIN_SRC emacs-lisp
+  (require 'package)
+
+  (add-to-list 'package-archives
+               '("melpa" . "http://melpa.org/packages/"))
+
+  (package-initialize)
+  (when (not package-archive-contents)
+      (package-refresh-contents))
+#+END_SRC
+
+** Vendor Path
+
+Keep any Elisp files not installed from a package repository in the
+=vendor/= directory:
+
+#+NAME: init-before
+#+BEGIN_SRC emacs-lisp
+  ;; TODO: Load vendor subdirectories
+  (defvar tvjg/vendor-directory (concat user-emacs-directory "vendor/use-package"))
+  (add-to-list `load-path tvjg/vendor-directory)
+#+END_SRC
+
+** Configuring Packages
+
+We use [[https://github.com/jwiegley/use-package][use-package]] to autoload packages. It provides a DSL for
+setting up autoloads and keybindings, and for deferring the loading
+of packages that might otherwise slow down Emacs's startup.
+
+#+NAME: init-before
+#+BEGIN_SRC emacs-lisp
+  (eval-when-compile
+    (require 'use-package))
+  (require 'bind-key)
+#+END_SRC
+
+** Temporary Files
+
+Keep temporary files in a separate directory:
+
+#+NAME: init-before
+#+BEGIN_SRC emacs-lisp
+  (defvar tvjg/ephemeral-directory "~/.emacs.tmp/")
+  (unless (file-exists-p tvjg/ephemeral-directory)
+    (mkdir tvjg/ephemeral-directory))
+#+END_SRC
+
+Autosave and backup files (currently disabled) go in =/tmp/=.
+
+#+NAME: init-after
+#+BEGIN_SRC emacs-lisp
+  (setq backup-directory-alist
+        `((".*" . ,temporary-file-directory)))
+  (setq auto-save-file-name-transforms
+        `((".*" ,temporary-file-directory t)))
+  (setq-default make-backup-files nil)
+#+END_SRC
+
+Keep Eshell's temporary files out of the way:
+
+#+NAME: init-after
+#+BEGIN_SRC emacs-lisp
+  (setq eshell-directory-name (expand-file-name "eshell/" tvjg/ephemeral-directory))
+#+END_SRC
+
+** Custom
+
+Set alternative location for =custom-set-variables= and =custom-set-faces=:
+
+#+NAME: init-after
+#+BEGIN_SRC emacs-lisp
+  (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+  (load custom-file 'noerror)
+#+END_SRC
+
+* Key Bindings
+
+** Evil
+
+Evil mode is a minor mode providing Vim emulation for Emacs. It
+reproduces Vim's modal editing and even certain Ex commands.
+
+Evil Leader mode provides something like Vim's =<Leader>=, which is
+set to =SPC= below. Here are the conventions used throughout the
+configuration around "namespacing" sets of commands bound to the
+leader key:
+
+| Key | Description                 |
+|-----+-----------------------------|
+| =g= | Git functions (via Magit)   |
+| =h= | Helm commands               |
+| =o= | Option (minor-mode) toggles |
+| =r= | Global Org mode functions   |
+
+(Evil Leader mode has to be initialized before Evil mode to work
+around [[https://github.com/cofi/evil-leader/issues/10][a limitation]].)
+
+#+NAME: evil
+#+BEGIN_SRC emacs-lisp
+  (use-package evil
+               :ensure t
+               :init
+               (progn
+                 (use-package evil-leader
+                              :ensure t
+                              :config
+                              (progn
+                                (setq evil-leader/in-all-states t)
+                                (evil-leader/set-leader ",")
+                                (global-evil-leader-mode t)
+
+                                (evil-leader/set-key
+                                 "b" 'switch-to-buffer
+                                 "f" 'find-file
+                                 "," 'evil-repeat-find-char-reverse))))
+               :config
+               (progn
+                 (evil-mode t)
+                 
+                 (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
+                 (define-key evil-visual-state-map (kbd "C-u") 'evil-scroll)
+
+                 (use-package evil-surround
+                   :ensure t
+                   :config
+                   (progn
+                     (global-evil-surround-mode t)))
+
+                 (unless (display-graphic-p)
+                   (evil-esc-mode))
+
+                 (defun my-major-mode-evil-state-adjust ()
+                   (let ((evil-state-modes '(fundamental-mode
+                                             text-mode
+                                             prog-mode
+                                             sws-mode
+                                             dired-mode
+                                             comint-mode
+                                             log-edit-mode
+                                             compilation-mode))
+                         (emacs-state-modes '(debugger-mode
+                                              git-rebase-mode)))
+                     (when (apply 'derived-mode-p evil-state-modes)
+                       (turn-on-evil-mode))
+                     (when (apply 'derived-mode-p emacs-state-modes)
+                       (turn-off-evil-mode))))
+
+                 (add-hook 'after-change-major-mode-hook #'my-major-mode-evil-state-adjust)
+
+                 (cl-loop for mode in '(git-commit-mode magit-blame-mode)
+                          do (let ((hook (concat (symbol-name mode) "-hook")))
+                               (add-hook (intern hook) `(lambda ()
+                                                          (if ,mode
+                                                              (evil-emacs-state)
+                                                            (evil-normal-state))))))))
+#+END_SRC

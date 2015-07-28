@@ -1,8 +1,7 @@
-(require 'cask "~/.cask/cask.el")
-(cask-initialize)
-(require 'pallet)
-(pallet-mode t)
+;; Load up Org-babel
+(require 'ob-tangle)
 
-(mapc 'load (directory-files "~/.emacs.d/customizations" t "^[0-9]+.*\.el$"))
-
-(provide 'init)
+;; Load our main configuration file
+(org-babel-load-file
+  (expand-file-name "tvjg.org"
+                    user-emacs-directory))
