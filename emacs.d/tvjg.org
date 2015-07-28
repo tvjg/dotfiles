@@ -51,6 +51,13 @@ of packages that might otherwise slow down Emacs's startup.
   (require 'bind-key)
 #+END_SRC
 
+** Better Defaults
+
+#+BEGIN_SRC emacs-lisp
+  (use-package better-defaults
+    :ensure t)
+#+END_SRC
+
 ** Temporary Files
 
 Keep temporary files in a separate directory:
@@ -88,6 +95,26 @@ Set alternative location for =custom-set-variables= and =custom-set-faces=:
 #+BEGIN_SRC emacs-lisp
   (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
   (load custom-file 'noerror)
+#+END_SRC
+
+* Navigation and Completion
+
+** Ido
+
+#+NAME: navigation-completion
+#+BEGIN_SRC emacs-lisp
+  (use-package flx-ido
+    :ensure t
+    :init
+    (progn
+      (setq ido-save-directory-list-file (expand-file-name "ido.last" tvjg/ephemeral-directory))
+    :config
+    (progn
+      (ido-everywhere t)
+      (flx-ido-mode t))
+
+      (setq ido-enable-flex-matching t)
+      (add-to-list 'ido-ignore-files "\\.DS_Store")))
 #+END_SRC
 
 * Key Bindings
