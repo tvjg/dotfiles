@@ -139,7 +139,6 @@ set smartcase   " a pattern contains an uppercase letter, it is case
 " Key mappings
 "
 let mapleader=","
-set pastetoggle=<leader>p " Toggle paste mode to reduce paste indent suckage
 
 " Navigate by editor lines, not real lines
 nnoremap j gj
@@ -155,9 +154,6 @@ map <Leader>b :CtrlPBuffer<CR>
 
 " Open vimrc for fast editing
 map <Leader>e :e! ~/.vimrc<CR> 
-
-" Hide search highlighting
-map <Leader>h :set invhls <CR>
 
 " Write buffer out with sudo
 "   http://stackoverflow.com/a/96492/623846
