@@ -1,6 +1,7 @@
 #+TITLE: John Guidry's Emacs Configuration
 #+AUTHOR: John Guidry
 
+
 * Usage
 
 ** Commentary
@@ -11,6 +12,7 @@ for easily distinguishing between built-in functions and those
 defined in this configuration or another package, and has no other
 special significance.
 
+
 * Emacs Initialization
 
 ** Package Sources
@@ -20,6 +22,9 @@ special significance.
 
   (add-to-list 'package-archives
                '("melpa" . "http://melpa.org/packages/"))
+
+  (add-to-list 'package-archives
+               '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/") t)
 
   (package-initialize)
   (when (not package-archive-contents)
@@ -51,6 +56,9 @@ of packages that might otherwise slow down Emacs's startup.
   (require 'bind-key)
 #+END_SRC
 
+
+* General
+
 ** Better Defaults
 
 #+BEGIN_SRC emacs-lisp
@@ -58,6 +66,11 @@ of packages that might otherwise slow down Emacs's startup.
     :ensure t)
 #+END_SRC
 
+** Diminish
+
+#+BEGIN_SRC emacs-lisp
+  (use-package diminish :ensure t)
+#+END_SRC
 ** Temporary Files
 
 Keep temporary files in a separate directory:
@@ -77,7 +90,7 @@ Autosave and backup files (currently disabled) go in =/tmp/=.
         `((".*" . ,temporary-file-directory)))
   (setq auto-save-file-name-transforms
         `((".*" ,temporary-file-directory t)))
-  (setq-default make-backup-files nil)
+  (setq make-backup-files nil)
 #+END_SRC
 
 Keep Eshell's temporary files out of the way:
@@ -87,6 +100,16 @@ Keep Eshell's temporary files out of the way:
   (setq eshell-directory-name (expand-file-name "eshell/" tvjg/ephemeral-directory))
 #+END_SRC
 
+** Exec Path
+
+#+BEGIN_SRC emacs-lisp
+  (use-package exec-path-from-shell
+   :ensure t
+   :config
+   (progn
+     (when (memq window-system '(mac ns))
+       (exec-path-from-shell-initialize))))
+#+END_SRC
 ** Custom
 
 Set alternative location for =custom-set-variables= and =custom-set-faces=:
@@ -97,8 +120,65 @@ Set alternative location for =custom-set-variables= and =custom-set-faces=:
   (load custom-file 'noerror)
 #+END_SRC
 
+
+* Themes
+
+#+BEGIN_SRC emacs-lisp
+   ;(use-package cyberpunk-theme :ensure t)
+   (use-package base16-theme
+     :ensure t
+     :init (load-theme 'base16-ocean-dark t))
+#+END_SRC
+
+
+* Editing
+
+** Line Numbers
+
+#+BEGIN_SRC emacs-lisp
+  (use-package relative-line-numbers
+    :ensure t
+    :config
+    (progn
+      (line-number-mode t)
+      (column-number-mode t)
+
+      (setq relative-line-numbers-format #'padded-line-numbers)
+
+      (defun padded-line-numbers (offset)
+        (format "%2d " (abs offset)))))
+#+END_SRC
+
+** Emmet
+
+#+BEGIN_SRC emacs-lisp
+  (use-package emmet-mode
+    :ensure t
+    :config
+    (progn
+      (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
+      (add-hook 'css-mode-hook  'emmet-mode)))
+#+END_SRC
+   
+
 * Navigation and Completion
 
+** Find in Project
+
+[[https://github.com/bbatsov/projectile][Projectile]] allows easy switching between projects as well as
+finding files and buffers related to the current project.
+
+Projectile's bindings start with =C-c p=.
+
+#+NAME: navigation-completion
+#+BEGIN_SRC emacs-lisp
+  (use-package projectile
+    :ensure t
+    :config
+    (progn
+      (add-to-list 'projectile-globally-ignored-files ".DS_Store") ; FIXME: Only works for file in root
+      (projectile-global-mode)))
+#+END_SRC
 ** Ido
 
 #+NAME: navigation-completion
@@ -116,6 +196,114 @@ Set alternative location for =custom-set-variables= and =custom-set-faces=:
       (setq ido-enable-flex-matching t)
       (add-to-list 'ido-ignore-files "\\.DS_Store")))
 #+END_SRC
+
+** Tramp
+
+#+BEGIN_SRC emacs-lisp
+  (setq tramp-default-method "ssh")
+#+END_SRC
+
+** Guide Key
+
+#+BEGIN_SRC emacs-lisp
+    (use-package guide-key
+      :ensure t
+      :config
+      (progn
+        (setq guide-key/guide-key-sequence
+              '("C-c"
+                "C-h"
+                "C-w"
+                "C-u"
+                "C-x"))
+        (setq guide-key/recursive-key-sequence-flag t)
+        (setq guide-key/popup-window-position 'bottom)
+        (guide-key-mode t)))
+#+END_SRC
+
+
+* Version Control
+
+** Magit
+
+#+BEGIN_SRC emacs-lisp
+  (use-package magit :ensure t)
+#+END_SRC
+
+
+* Language Support
+
+** Markdown
+
+#+BEGIN_SRC emacs-lisp
+  (use-package markdown-mode
+    :ensure t
+    :config
+    (progn
+      (autoload 'markdown-mode "markdown-mode"
+        "Major mode for editing Markdown files" t)
+      
+      (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
+      (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
+      (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))))
+#+END_SRC
+
+** Sass
+
+#+BEGIN_SRC emacs-lisp
+  (use-package scss-mode
+    :ensure t
+    :config (progn (setq scss-compile-at-save nil)))
+#+END_SRC 
+** Clojure
+
+#+BEGIN_SRC emacs-lisp
+  (use-package clojure-mode
+    :ensure t
+    :config
+    (progn
+      (use-package cider :ensure t :pin melpa-stable)
+      
+      (use-package paredit
+        :ensure t
+        :config
+        (progn
+          (add-hook 'clojure-mode-hook 'paredit-mode)
+          (add-hook 'cider-repl-mode-hook 'paredit-mode)))
+
+      (use-package company
+        :ensure t
+        :config
+        (progn
+          (add-hook 'clojure-mode-hook 'company-mode)
+          (add-hook 'cider-repl-mode-hook 'company-mode)))
+      
+      (use-package rainbow-delimiters
+        :ensure t
+        :config
+        (progn
+          (add-hook 'clojure-mode-hook 'rainbow-delimiters-mode)
+          (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)))
+
+      (add-to-list 'auto-mode-alist '("\\.boot\\'" . clojure-mode))))
+#+END_SRC
+
+** Javascript
+
+#+BEGIN_SRC emacs-lisp
+  (use-package js2-mode
+    :ensure t
+    :config
+    (progn
+      (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+      (setq js2-highlight-level 3)
+
+      ;; Use plain old js-mode for JSON, js2-mode doth protest too much
+      ;; https://github.com/bodil/emacs.d/blob/133386b9cc773377b36fce990d17367438a8916a/bodil/bodil-js.el#L38
+      (add-to-list 'auto-mode-alist '("\\.json$" . js-mode))))
+#+END_SRC
+
 
 * Key Bindings
 
@@ -142,59 +330,65 @@ around [[https://github.com/cofi/evil-leader/issues/10][a limitation]].)
 #+NAME: evil
 #+BEGIN_SRC emacs-lisp
   (use-package evil
-               :ensure t
-               :init
-               (progn
-                 (use-package evil-leader
-                              :ensure t
-                              :config
-                              (progn
-                                (setq evil-leader/in-all-states t)
-                                (evil-leader/set-leader ",")
-                                (global-evil-leader-mode t)
+    :ensure t
+    :init
+    (progn
+      (use-package evil-leader
+        :ensure t
+        :config
+        (progn
+          (setq evil-leader/in-all-states t)
+          (evil-leader/set-leader ",")
+          (global-evil-leader-mode t)
+          
+          (evil-leader/set-key
+            "b" 'switch-to-buffer
+            "f" 'find-file
+            "," 'evil-repeat-find-char-reverse))))
+    :config
+    (progn
+      (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
+      (define-key evil-visual-state-map (kbd "C-u") 'evil-scroll)
+      (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
 
-                                (evil-leader/set-key
-                                 "b" 'switch-to-buffer
-                                 "f" 'find-file
-                                 "," 'evil-repeat-find-char-reverse))))
-               :config
-               (progn
-                 (evil-mode t)
-                 
-                 (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
-                 (define-key evil-visual-state-map (kbd "C-u") 'evil-scroll)
+      (setq evil-emacs-state-cursor '("red" box))
+      (setq evil-normal-state-cursor '("green" box))
+      (setq evil-visual-state-cursor '("orange" box))
+      (setq evil-insert-state-cursor '("red" bar))
+      (setq evil-replace-state-cursor '("red" bar))
+      (setq evil-operator-state-cursor '("red" hollow))
+      
+      (setq evil-default-state 'emacs)
+      (evil-mode)))
 
-                 (use-package evil-surround
-                   :ensure t
-                   :config
-                   (progn
-                     (global-evil-surround-mode t)))
+  (use-package evil-surround
+    :ensure t
+    :requires 'evil
+    :config (progn (global-evil-surround-mode t)))
 
-                 (unless (display-graphic-p)
-                   (evil-esc-mode))
+  (use-package evil-visualstar
+    :ensure t
+    :requires 'evil
+    :config (progn (global-evil-visualstar-mode t)))
 
-                 (defun my-major-mode-evil-state-adjust ()
-                   (let ((evil-state-modes '(fundamental-mode
-                                             text-mode
-                                             prog-mode
-                                             sws-mode
-                                             dired-mode
-                                             comint-mode
-                                             log-edit-mode
-                                             compilation-mode))
-                         (emacs-state-modes '(debugger-mode
-                                              git-rebase-mode)))
-                     (when (apply 'derived-mode-p evil-state-modes)
-                       (turn-on-evil-mode))
-                     (when (apply 'derived-mode-p emacs-state-modes)
-                       (turn-off-evil-mode))))
+  (use-package evil-commentary
+    :ensure t
+    :requires 'evil
+    :diminish evil-commentary-mode
+    :config (progn (evil-commentary-mode t)))
 
-                 (add-hook 'after-change-major-mode-hook #'my-major-mode-evil-state-adjust)
+  (use-package evil-matchit
+    :ensure t
+    :requires 'evil
+    :config (progn (global-evil-matchit-mode t)))
+#+END_SRC
 
-                 (cl-loop for mode in '(git-commit-mode magit-blame-mode)
-                          do (let ((hook (concat (symbol-name mode) "-hook")))
-                               (add-hook (intern hook) `(lambda ()
-                                                          (if ,mode
-                                                              (evil-emacs-state)
-                                                            (evil-normal-state))))))))
+
+* Org Mode
+
+#+BEGIN_SRC emacs-lisp
+  (use-package org
+    :config
+    (progn
+      (setq org-src-fontify-natively t)))
 #+END_SRC
