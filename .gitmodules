@@ -60,5 +60,5 @@
 	path = vim/bundle/unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
 [submodule "emacs.d/vendor/use-package"]
-	path = emacs.d/vendor/use-package
+	path = emacs.d/site-lisp/use-package
 	url = https://github.com/jwiegley/use-package.git
