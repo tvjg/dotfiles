@@ -1,6 +1,7 @@
 # vim
 vim/.netrwhist
 vim/.netrwbook
+vim/init.vim
 
 # emacs
 emacs.d/auto-save-list/
