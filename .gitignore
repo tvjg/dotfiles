@@ -4,9 +4,9 @@ vim/.netrwbook
 
 # emacs
 emacs.d/auto-save-list/
+emacs.d/custom.el
 emacs.d/elpa
 emacs.d/places
 emacs.d/projectile*
-emacs.d/tvjg.el
-emacs.d/tramp-autosave/
-archive-contents
+emacs.d/recentf
+emacs.d/tramp

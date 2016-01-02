@@ -1,47 +1,57 @@
-(require 'evil)
-(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
-(define-key evil-visual-state-map (kbd "C-u") 'evil-scroll-up)
+(use-package evil
+  :ensure t
+  :init
+  (progn
+    ;; Evil Leader mode has to be initialized before Evil mode to work
+    ;; around a limitation.
+    ;; https://github.com/cofi/evil-leader/issues/10
+    (use-package evil-leader
+      :ensure t
+      :config
+      (progn
+        (setq evil-leader/in-all-states t)
+        (evil-leader/set-leader ",")
+        (global-evil-leader-mode t)
 
-(require 'evil-surround)
-(global-evil-surround-mode 1)
+        (evil-leader/set-key
+          "b" 'switch-to-buffer
+          "f" 'find-file
+          "," 'evil-repeat-find-char-reverse))))
+  :config
+  (progn
+    (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
+    (define-key evil-visual-state-map (kbd "C-u") 'evil-scroll)
+    (define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
 
-; https://github.com/cofi/evil-leader/issues/1
-(require 'evil-leader)
-(setq evil-leader/in-all-states 1)
-(setq evil-leader/leader ",")
-(global-evil-leader-mode)
-(evil-leader/set-key
-  "b" 'switch-to-buffer
-  "f" 'find-file
-  "," 'evil-repeat-find-char-reverse)
+    (setq evil-emacs-state-cursor '("red" box))
+    (setq evil-normal-state-cursor '("green" box))
+    (setq evil-visual-state-cursor '("orange" box))
+    (setq evil-insert-state-cursor '("red" bar))
+    (setq evil-replace-state-cursor '("red" bar))
+    (setq evil-operator-state-cursor '("red" hollow))
 
-; https://github.com/bling/dotemacs/blob/061c06d18c29d09c7c87a8a1c83ac78a29f0ecb5/config/init-evil.el#L95
-(unless (display-graphic-p)
-  (evil-esc-mode))
+    (setq evil-default-state 'emacs)
+    (evil-mode)))
 
-(defun my-major-mode-evil-state-adjust ()
-  (let ((evil-state-modes '(fundamental-mode
-                            text-mode
-                            prog-mode
-                            sws-mode
-                            dired-mode
-                            comint-mode
-                            log-edit-mode
-                            compilation-mode))
-        (emacs-state-modes '(debugger-mode
-                             git-rebase-mode)))
-    (when (apply 'derived-mode-p evil-state-modes)
-      (turn-on-evil-mode))
-    (when (apply 'derived-mode-p emacs-state-modes)
-      (turn-off-evil-mode))))
+(use-package evil-surround
+  :ensure t
+  :requires 'evil
+  :config (progn (global-evil-surround-mode t)))
 
-(add-hook 'after-change-major-mode-hook #'my-major-mode-evil-state-adjust)
+(use-package evil-visualstar
+  :ensure t
+  :requires 'evil
+  :config (progn (global-evil-visualstar-mode t)))
 
-(cl-loop for mode in '(git-commit-mode magit-blame-mode)
-         do (let ((hook (concat (symbol-name mode) "-hook")))
-              (add-hook (intern hook) `(lambda ()
-                                         (if ,mode
-                                           (evil-emacs-state)
-                                           (evil-normal-state))))))
+(use-package evil-commentary
+  :ensure t
+  :requires 'evil
+  :diminish evil-commentary-mode
+  :config (progn (evil-commentary-mode t)))
+
+(use-package evil-matchit
+  :ensure t
+  :requires 'evil
+  :config (progn (global-evil-matchit-mode t)))
 
 (provide '30-evil)
