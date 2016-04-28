@@ -30,9 +30,13 @@ function mkcdr() {
 
 # Echo the folder name and branch of any git repo in the current directory
 function git-branches() {
+  local git_symbolic_ref
+  local git_revision
   for d in $(ls -d */ | sed "s/\/*$//"); do
     if [ -d "$d/.git" ]; then
-      echo "${d} (`git --git-dir ${d}/.git symbolic-ref --short HEAD`)"
+      git_symbolic_ref="git --git-dir ${d}/.git symbolic-ref --short HEAD"
+      git_revision="git --git-dir ${d}/.git rev-parse --short HEAD"
+      echo "${d} (`${git_symbolic_ref} 2>/dev/null ||  ${git_revision}`)"
     fi
   done | column -t
 }
