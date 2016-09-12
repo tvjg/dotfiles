@@ -19,9 +19,6 @@
 [submodule "vim/bundle/indent-guides"]
 	path = vim/bundle/indent-guides
 	url = https://github.com/nathanaelkane/vim-indent-guides
-[submodule "vim/bundle/nerdcommenter"]
-	path = vim/bundle/nerdcommenter
-	url = https://github.com/scrooloose/nerdcommenter.git
 [submodule "vim/bundle/shebang"]
 	path = vim/bundle/shebang
 	url = https://github.com/vitalk/vim-shebang.git
