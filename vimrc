@@ -173,11 +173,4 @@ if has('autocmd')
     au BufWritePost .vimrc,_vimrc,vimrc,.gvimrc,_gvimrc,gvimrc so $MYVIMRC
   augroup END
 
-  " Syntax highlighting for cakephp templates
-  "   http://www.acloudtree.com/ubuntu-vim-cakephp-12-ctp-syntax-highlighting/
-  augroup highlight
-    au!
-    autocmd BufEnter *.ctp set syn=php
-  augroup END
-
 endif
