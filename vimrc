@@ -45,12 +45,6 @@ if has('win32') || has('win64')
   set directory=.,$VIM\vimfiles\tmp
 endif
 
-" Nicked from tpope/vim-sensible
-" Load matchit.vim, but only if the user hasn't installed a newer version.
-if !exists('g:loaded_matchit') && findfile('plugin/matchit.vim', &rtp) ==# ''
-  runtime! macros/matchit.vim
-endif
-
 set hidden          " Background buffer without writing to disk
 set autoread        " Re-read on file change
 set guioptions=aec  " Autoselect, menu and prefer console questions over popups
@@ -62,10 +56,6 @@ endif
 
 " Tab complete up to the point of ambiguity and cycle 
 set wildmode=list:longest
-
-" Show nice info in ruler
-set ruler
-set laststatus=2
 
 " Statusline
 set statusline=%<%F       "tail of the filename
@@ -98,12 +88,10 @@ set statusline+=%{&ft} " filetype (python).
 " Begin scroll three lines from edge 
 set scrolloff=3
 
-set autoindent
 set expandtab
 set softtabstop=2
 set shiftwidth=2
 
-syntax on
 set showmatch             " Matching braces
 set visualbell
 set cursorline            " Highlight current line
@@ -127,10 +115,8 @@ set showbreak=--->
 set nobackup
 set nowritebackup
 set noswapfile
-set history=100
 
 " Searching
-set incsearch
 set ignorecase  " When 'ignorecase' and 'smartcase' are both on, if 
 set smartcase   " a pattern contains an uppercase letter, it is case 
                 " sensitive, otherwise, it is not. 
