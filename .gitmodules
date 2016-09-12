@@ -25,9 +25,6 @@
 [submodule "vim/bundle/shebang"]
 	path = vim/bundle/shebang
 	url = https://github.com/vitalk/vim-shebang.git
-[submodule "vim/bundle/jinja2"]
-	path = vim/bundle/jinja2
-	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
 [submodule "vim/bundle/polyglot"]
 	path = vim/bundle/polyglot
 	url = https://github.com/sheerun/vim-polyglot.git
