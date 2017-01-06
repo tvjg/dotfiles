@@ -65,3 +65,6 @@
 [submodule "vim/bundle/sensible"]
 	path = vim/bundle/sensible
 	url = git@github.com:tpope/vim-sensible.git
+[submodule "vim/bundle/repeat"]
+	path = vim/bundle/repeat
+	url = https://github.com/tpope/vim-repeat.git
