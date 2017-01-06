@@ -8,3 +8,7 @@
 
 [color]
   ui = auto
+
+# Refuse to push if the upstream branch’s name is different from the local one
+[push]
+  default = simple
