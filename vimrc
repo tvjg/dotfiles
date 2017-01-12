@@ -96,7 +96,6 @@ set showmatch             " Matching braces
 set visualbell
 set cursorline            " Highlight current line
 set cursorcolumn          " Highlight current column
-filetype plugin indent on
 
 set background=dark
 colorscheme base16-ocean
