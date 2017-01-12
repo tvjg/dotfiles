@@ -28,6 +28,14 @@
   (require 'use-package))
 (require 'bind-key)
 
+;; https://github.com/purcell/exec-path-from-shell
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (progn
+    (when (memq window-system '(mac ns))
+      (exec-path-from-shell-initialize))))
+
 ;; Keep temporary files in a separate directory
 (defvar tvjg/ephemeral-directory "~/.emacs.tmp/")
 (unless (file-exists-p tvjg/ephemeral-directory)
