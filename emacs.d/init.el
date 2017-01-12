@@ -44,10 +44,6 @@
 ;; Keep Eshell's temporary files out of the way
 (setq eshell-directory-name (expand-file-name "eshell/" tvjg/ephemeral-directory))
 
-;; Keep tramp files out of the way
-(setq tramp-auto-save-directory
-      (expand-file-name "tramp-autosave/" tvjg/ephemeral-directory))
-
 ;;Autosave and backup files (currently disabled) go in /tmp.
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
