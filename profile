@@ -18,7 +18,7 @@ export LC_ALL="en_US.UTF-8"
 export LANG="en_US"
 
 # Brew and locally compiled stuff:
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # The following line puts gnu utilities without the prefix "g" in the path
 # i.e. tar/gtar:
