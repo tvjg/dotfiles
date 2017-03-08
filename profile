@@ -35,12 +35,6 @@ fi
 # manage ruby versions
 if [ -d "$HOME/.rbenv" ]; then
   export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
-
-# manage nodejs versions
-if [ -d "$HOME/.nvm" ]; then
-  source ~/.nvm/nvm.sh
 fi
 
 if [ -d "$HOME/.cask" ]; then
@@ -49,4 +43,12 @@ fi
 
 if [ -f "$HOME/.boot_jvm_options" ]; then
   export BOOT_JVM_OPTIONS=`cat $HOME/.boot_jvm_options`
+fi
+
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
+    if [ -f "$HOME/.bashrc" ]; then
+	. "$HOME/.bashrc"
+    fi
 fi

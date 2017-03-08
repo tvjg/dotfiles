@@ -22,6 +22,21 @@ if hash brew 2>/dev/null; then
   fi
 fi
 
+# manage ruby versions
+if [ -d "$HOME/.rbenv" ]; then
+  eval "$(rbenv init -)"
+fi
+
+# manage nodejs versions
+if [ -s "$HOME/.nvm/nvm.sh" ]; then
+  . "$HOME/.nvm/nvm.sh"
+fi
+
+# The `-b` flag specifies that the output of dircolors is bash specific
+if [ -x /usr/bin/dircolors ]; then
+  test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+fi
+
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra can be used for settings you don’t want to commit
 for file in ~/.{extra,bash_prompt,bash_exports,bash_aliases,bash_functions}; do
