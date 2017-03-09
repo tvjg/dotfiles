@@ -1,0 +1,54 @@
+general {
+  output_format = "none"
+  colors = true
+  color_good = "#a3be8c"
+  color_bad = "#bf616a"
+}
+
+/*order += "cpu_temperature 0"*/
+order += "ethernet eth0"
+order += "ethernet eth1"
+/*order += "wireless wlan0"*/
+order += "volume master"
+order += "battery 0"
+order += "time"
+
+/*cpu_temperature 0 {*/
+  /*format = "cpu: %degrees°C"*/
+/*}*/
+
+time {
+  # format = "🕑 %H:%M"
+  format = "%H:%M"
+}
+
+wireless wlan0 {
+  # format_up = "📶 %essid(%quality)"
+  # format_down = "📶 down"
+  format_up = "wlan: %essid [%quality]"
+  format_down = "wlan: down"
+}
+
+ethernet eth0 {
+  # format_up = "🌐 %ip"
+  format_up = "eth0: %ip"
+  format_down = "eth0: down"
+}
+
+ethernet eth1 {
+  # format_up = "🌐 %ip"
+  format_up = "eth1: %ip"
+  format_down = "eth1: down"
+}
+
+volume master {
+  format = "♪: %volume"
+  device = "default"
+  mixer = "Master"
+  mixer_idx = 0
+}
+
+battery 0 {
+  # format = "🔋 %percentage(%remaining)"
+  format = "%percentage %status"
+}
