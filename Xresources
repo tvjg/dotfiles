@@ -40,11 +40,14 @@
 *color14:      base0F
 *color15:      base07
 
+Xcursor.theme: Adwaita
+Xcursor.size: 48
+
 ! fonts
 Xft*autohint: 0
 Xft*hinting: true
 Xft*hintstyle: hintsfull
-Xft*dpi: 96
+Xft*dpi: 192
 Xft*rgba: rgb
 Xft*lcdfilter: lcdlight
 

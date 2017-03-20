@@ -1,6 +1,7 @@
 #!/bin/sh
 xset -b # disable bell
 xrdb -merge ~/.Xresources
+xrandr --dpi 192x192
 
 sh .wallpaper/rotate.sh &
 urxvtd -q -f -o

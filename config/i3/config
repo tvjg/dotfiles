@@ -52,7 +52,7 @@ bindsym $mod+Return exec --no-startup-id $terminal
 bindsym $mod+$mod2+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+Escape exec dmenu_run
+bindsym $mod+Escape exec --no-startup-id i3-dmenu-desktop --dmenu="dmenu.xft -fn 'Inconsolata-11'"
 
 #ranger
 bindsym $mod+e exec $terminal -name ranger -title ranger -e ranger
