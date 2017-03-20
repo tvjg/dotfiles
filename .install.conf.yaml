@@ -25,8 +25,8 @@
   - ["curl https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -o ~/.bash_preexec", Installing bash-preexec]
 
 - shell:
-  - mkdir -p ~/bin
-  - ["curl http://beyondgrep.com/ack-2.14-single-file -o ~/bin/ack", Installing ack]
-  - ["curl https://raw.githubusercontent.com/rupa/z/master/z.sh -o ~/bin/z", Installing z]
-  - ["curl https://raw.githubusercontent.com/funtoo/keychain/master/keychain.sh -o ~/bin/keychain", Installing keychain]
-  - chmod -R 0755 ~/bin
+  - mkdir -p ~/.bin
+  - ["curl http://beyondgrep.com/ack-2.14-single-file -o ~/.bin/ack", Installing ack]
+  - ["curl https://raw.githubusercontent.com/rupa/z/master/z.sh -o ~/.bin/z", Installing z]
+  - ["curl https://raw.githubusercontent.com/funtoo/keychain/master/keychain.sh -o ~/.bin/keychain", Installing keychain]
+  - chmod -R 0755 ~/.bin
