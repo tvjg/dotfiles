@@ -32,6 +32,10 @@ if [ -s "$HOME/.nvm/nvm.sh" ]; then
   . "$HOME/.nvm/nvm.sh"
 fi
 
+if [ -d "$HOME/.nodenv" ]; then
+  eval "$(nodenv init -)"
+fi
+
 # The `-b` flag specifies that the output of dircolors is bash specific
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
