@@ -17,10 +17,6 @@ endif
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
 
-if !executable('ctags')
-  call add(g:pathogen_disabled, 'tagbar')
-endif
-
 if !executable('git')
   call add(g:pathogen_disabled, 'fugitive')
 endif
@@ -128,10 +124,6 @@ let mapleader=","
 " Navigate by editor lines, not real lines
 nnoremap j gj
 nnoremap k gk
-
-if executable('ctags')
-  nmap <Leader>t :TagbarToggle<CR>
-endif
 
 " Remap to avoid clobbering autocompletion
 let g:ctrlp_map = '<Leader>f'
