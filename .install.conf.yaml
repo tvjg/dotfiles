@@ -9,12 +9,10 @@
     ~/.bash_profile: bash_profile
     ~/.bash_prompt: bash_prompt
     ~/.bashrc: bashrc
-    ~/.boot_jvm_options: boot_jvm_options
     ~/.emacs.d: emacs.d/
     ~/.gitconfig: gitconfig
     ~/.hgrc: hgrc
     ~/.profile: profile
-    ~/.profile.boot: profile.boot
     ~/.screenrc: screenrc
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim/

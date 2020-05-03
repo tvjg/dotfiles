@@ -41,10 +41,6 @@ if [ -d "$HOME/.cask" ]; then
   export PATH="$HOME/.cask/bin:$PATH"
 fi
 
-if [ -f "$HOME/.boot_jvm_options" ]; then
-  export BOOT_JVM_OPTIONS="$(cat $HOME/.boot_jvm_options)"
-fi
-
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
