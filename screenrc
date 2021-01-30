@@ -1,9 +1,0 @@
-startup_message off
-defscrollback 30000
-
-autodetach on # Autodetach session on hangup instead of terminating screen completely
-
-altscreen on # Fixes text left behind after closing some apps like nano
-
-caption always "%{= dw}%-w%{= GW}%n %t%{-}%+w %-="
-vbell off

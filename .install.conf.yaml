@@ -13,7 +13,6 @@
     ~/.gitconfig: gitconfig
     ~/.hgrc: hgrc
     ~/.profile: profile
-    ~/.screenrc: screenrc
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim/
     ~/.vimrc: vimrc
