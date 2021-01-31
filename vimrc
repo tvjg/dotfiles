@@ -93,8 +93,10 @@ set visualbell
 set cursorline            " Highlight current line
 set cursorcolumn          " Highlight current column
 
-set background=dark
-colorscheme base16-ocean
+if filereadable(expand("~/.vimrc_background"))
+  let base16colorspace=256
+  source ~/.vimrc_background
+endif
 
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
