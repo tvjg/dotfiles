@@ -37,4 +37,4 @@ unset file
 # z will take you to the most 'frecent' directory that matches ALL of the
 # regexes given on the command line, in order.
 # https://github.com/rupa/z
-. ~/.bin/z
+. ~/.local/bin/z
