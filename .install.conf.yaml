@@ -19,7 +19,6 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
-  - ["curl https://raw.githubusercontent.com/rcaloras/bash-preexec/master/bash-preexec.sh -o ~/.bash_preexec", Installing bash-preexec]
 
 - shell:
   - mkdir -p ~/.bin
