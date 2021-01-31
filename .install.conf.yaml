@@ -24,5 +24,4 @@
   - mkdir -p ~/.local/bin
   - ["curl https://beyondgrep.com/ack-2.14-single-file -o ~/.local/bin/ack", Installing ack]
   - ["curl https://raw.githubusercontent.com/rupa/z/master/z.sh -o ~/.local/bin/z", Installing z]
-  - ["curl https://raw.githubusercontent.com/funtoo/keychain/master/keychain.sh -o ~/.local/bin/keychain", Installing keychain]
   - chmod -R 0755 ~/.local/bin
