@@ -1,0 +1,16 @@
+# In which directory do you store your music files?  If you specify it
+# you will be able to jump straight to this directory with the '-m'
+# parameter or the 'm' command.  This can also point to a playlist.
+#
+MusicDir = ~/audio/music
+
+# Show file time in menu?  Possible values: 'yes', 'no' and 'IfAvailable'
+# (meaning show the time only when it is already known, which often works
+# faster).
+ShowTime = yes
+
+# Theme file to use.  This can be absolute path or relative to
+# /usr/share/moc/themes/ (depends on installation prefix) or
+# ~/.moc/themes/ .
+#
+Theme = mono
