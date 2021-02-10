@@ -1,0 +1,6 @@
+[module/application]
+type = custom/ipc
+hook-0 = ~/.config/polybar/scripts/wm_class_under_focus
+initial = 1
+
+; vim:ft=dosini
