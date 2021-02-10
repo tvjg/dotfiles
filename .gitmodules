@@ -53,3 +53,6 @@
 [submodule "vim/bundle/fzf"]
 	path = vim/pack/tvjg/start/fzf
 	url = https://github.com/junegunn/fzf.vim.git 
+[submodule "vim/bundle/lumiere"]
+	path = vim/pack/tvjg/start/lumiere
+	url = https://github.com/tvjg/lumiere.vim.git
