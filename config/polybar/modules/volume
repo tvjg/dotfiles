@@ -1,0 +1,15 @@
+[module/volume]
+type = internal/pulseaudio
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+use-ui-max = false
+
+format-volume = <ramp-volume>
+format-muted = <label-muted>
+
+label-muted = ﱝ
+ramp-volume-0 = 奄
+ramp-volume-1 = 奔
+ramp-volume-2 = 墳
+
+; vim:ft=dosini
