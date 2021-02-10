@@ -1,0 +1,24 @@
+i3-wm.font: typeface_wm
+
+i3-wm.gaps.inner.size: 16 
+i3-wm.gaps.outer.size: 4
+
+i3-wm.client.focused.color.text: base07
+i3-wm.client.focused.color.background: base00
+i3-wm.client.focused.color.border: base07
+i3-wm.client.focused.color.child_border: base07
+
+i3-wm.client.focused_inactive.color.text: base06
+i3-wm.client.focused_inactive.color.background: base01
+i3-wm.client.focused_inactive.color.border: base06
+i3-wm.client.focused_inactive.color.child_border: base0f
+
+i3-wm.client.unfocused.color.text: base05
+i3-wm.client.unfocused.color.background: base02
+i3-wm.client.unfocused.color.border: base06
+i3-wm.client.unfocused.color.child_border: base0a
+
+i3-wm.client.urgent.color.text: base00
+i3-wm.client.urgent.color.background: #e6a5b7
+i3-wm.client.urgent.color.border: base07
+i3-wm.client.urgent.color.child_border: #d35f80

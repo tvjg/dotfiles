@@ -1,7 +1,4 @@
-! fonts
-Xft*autohint: 1
-Xft*antialias: 1
-Xft*hinting: true
-Xft*hintstyle: hintslight
-Xft*rgba: rgb
-Xft*lcdfilter: lcddefault
+#include ".Xresources.d/color"
+#include ".Xresources.d/font"
+#include ".Xresources.d/i3-wm"
+#include ".Xresources.d/st-term"
