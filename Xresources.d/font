@@ -1,0 +1,11 @@
+#define typeface_bar      pango:Source Code Pro 11
+#define typeface_terminal JetBrainsMono Nerd Font:style=Regular:pixelsize=14
+#define typeface_wm       pango:Source Code Pro 11 
+
+Xft.antialias: 1
+Xft.autohint: 0
+Xft.dpi: 96
+Xft.hinting: 1
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+Xft.rgba: rgb
