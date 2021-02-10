@@ -1,4 +1,5 @@
 #!/bin/bash
+export TERMINAL=xst
 export EDITOR=vim
 export GREP_COLORS="mt=1;33"
 
