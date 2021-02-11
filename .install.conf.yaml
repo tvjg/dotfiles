@@ -16,8 +16,27 @@
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim/
     ~/.vimrc: vimrc
-    ~/.xinitrc: xinitrc
+
+- link:
+    ~/.Xresources.d:
+      path: Xresources.d/*
+      glob: true
+      create: true
+    ~/.config/htop/:
+      path: config/htop/*
+      glob: true
+      create: true
+    ~/.config/i3: config/i3
+    ~/.config/moc/:
+      path: config/moc/*
+      glob: true
+      create: true
+    ~/.config/polybar: config/polybar
+    ~/.config/user-dirs.dirs: config/user-dirs.dirs
+    ~/.config/user-dirs.locale: config/user-dirs.locale
     ~/.Xmodmap: Xmodmap
+    ~/.Xresources: Xresources
+    ~/.xinitrc: xinitrc
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
