@@ -14,6 +14,7 @@
     ~/.hgrc: hgrc
     ~/.profile: profile
     ~/.tmux.conf: tmux.conf
+    ~/.tmux: tmux/
     ~/.vim: vim/
     ~/.vimrc: vimrc
 
