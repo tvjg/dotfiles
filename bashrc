@@ -20,12 +20,6 @@ if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
-# Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-        eval "$("$BASE16_SHELL/profile_helper.sh")"
- 
 # Load any aliases, functions, platform-specific scripts, etc.  Relegating them
 # to ~/.bashrc.d keeps things tidy.
 # https://blog.sanctum.geek.nz/shell-config-subfiles/
