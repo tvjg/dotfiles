@@ -13,6 +13,7 @@
     ~/.gitconfig: gitconfig
     ~/.profile: profile
     ~/.tmux.conf: tmux.conf
+    ~/.tmux: tmux/
     ~/.vim: vim/
 
 - defaults:
