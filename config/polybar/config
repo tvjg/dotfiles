@@ -47,6 +47,8 @@ font-0 = UbuntuMono Nerd Font:pixelsize=14:style=Bold;2
 font-1 = UbuntuMono Nerd Font:pixelsize=14:style=Regular;2
 
 tray-position = right
+tray-detached = true
+tray-offset-x = -220px
 tray-padding = 2
 
 ;wm-restack = i3
