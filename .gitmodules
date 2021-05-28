@@ -13,9 +13,6 @@
 [submodule "vim/bundle/tabular"]
 	path = vim/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
-[submodule "vim/bundle/indent-guides"]
-	path = vim/bundle/indent-guides
-	url = https://github.com/nathanaelkane/vim-indent-guides
 [submodule "vim/bundle/shebang"]
 	path = vim/bundle/shebang
 	url = https://github.com/vitalk/vim-shebang.git
