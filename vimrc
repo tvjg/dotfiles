@@ -30,17 +30,6 @@ runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect() 
 call pathogen#helptags()
 
-if has('win32') || has('win64')
-  behave mswin
-
-  if has("gui_running")
-    set guifont=Consolas:h10:cANSI
-  endif
-
-  " http://cfc.kizzx2.com/index.php/gvim-e303-unable-to-open-swap-file-for-no-name-recovery-impossible/ "
-  set directory=.,$VIM\vimfiles\tmp
-endif
-
 set hidden          " Background buffer without writing to disk
 set autoread        " Re-read on file change
 set guioptions=aec  " Autoselect, menu and prefer console questions over popups
