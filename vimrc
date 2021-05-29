@@ -21,11 +21,6 @@ if !executable('git')
   call add(g:pathogen_disabled, 'fugitive')
 endif
 
-if executable('col') && executable('man')
-  runtime ftplugin/man.vim
-  nnoremap <silent>K :<C-U>exe "Man" v:count "<cword>"<CR>
-endif
-
 runtime bundle/pathogen/autoload/pathogen.vim
 call pathogen#infect() 
 call pathogen#helptags()
