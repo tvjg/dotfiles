@@ -2,7 +2,6 @@
 
 - link:
     ~/.dotfiles: ''
-    ~/.ackrc: ackrc
     ~/.bash_aliases: bash_aliases
     ~/.bash_exports: bash_exports
     ~/.bash_functions: bash_functions
@@ -22,6 +21,7 @@
 
 - shell:
   - mkdir -p ~/.local/bin
-  - ["curl https://beyondgrep.com/ack-2.14-single-file -o ~/.local/bin/ack", Installing ack]
-  - ["curl https://raw.githubusercontent.com/rupa/z/master/z.sh -o ~/.local/bin/z", Installing z]
+  - ["curl https://raw.githubusercontent.com/rupa/z/master/z.sh -o ./z", Installing z]
+  - ["curl -Ls https://github.com/BurntSushi/ripgrep/releases/download/12.1.1/ripgrep-12.1.1-x86_64-unknown-linux-musl.tar.gz | tar xz --strip-components=1 ripgrep-12.1.1-x86_64-unknown-linux-musl/rg", Installing ripgrep]
+  - ["curl -Ls https://github.com/junegunn/fzf/releases/download/0.27.1/fzf-0.27.1-linux_amd64.tar.gz | tar xz", Installing fzf]
   - chmod -R 0755 ~/.local/bin

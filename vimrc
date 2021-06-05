@@ -5,14 +5,8 @@ let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
-" CtrlP file finder settings
-" Sane ignore settings
-let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|node_modules$' 
-
-" Use vim-dispatch to search the results in background
-if !has('nvim')
-  let g:ack_use_dispatch=1
-endif
+" fzf fuzzy finder settings
+let g:fzf_layout = { 'down': '16%' }
 
 " To disable a plugin, add it's bundle name to the following list
 let g:pathogen_disabled = []
@@ -80,9 +74,6 @@ set cursorcolumn          " Highlight current column
 set background=dark
 colorscheme base16-ocean
 
-let g:indent_guides_start_level = 2
-let g:indent_guides_guide_size = 1
-
 set shortmess=tI          " Truncate beginning of filename if too long
                           " Suppress vim intro message
 
@@ -109,9 +100,9 @@ let mapleader=","
 nnoremap j gj
 nnoremap k gk
 
-" Remap to avoid clobbering autocompletion
-let g:ctrlp_map = '<Leader>f'
-map <Leader>b :CtrlPBuffer<CR>
+" fzf
+map <Leader>f :GitFiles<CR>
+map <Leader>b :Buffers<CR>
 
 " Open vimrc for fast editing
 map <Leader>e :e! ~/.vimrc<CR> 
