@@ -71,8 +71,7 @@ set visualbell
 set cursorline            " Highlight current line
 set cursorcolumn          " Highlight current column
 
-set background=dark
-colorscheme base16-ocean
+colorscheme torte
 
 set shortmess=tI          " Truncate beginning of filename if too long
                           " Suppress vim intro message
