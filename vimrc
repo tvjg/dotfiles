@@ -15,7 +15,7 @@ if !executable('git')
   call add(g:pathogen_disabled, 'fugitive')
 endif
 
-runtime bundle/pathogen/autoload/pathogen.vim
+runtime pack/tvjg/start/pathogen/autoload/pathogen.vim
 call pathogen#infect() 
 call pathogen#helptags()
 
