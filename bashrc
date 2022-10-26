@@ -15,24 +15,21 @@ shopt -s checkwinsize
 # Case-insensitive globbing (used in pathname expansion)
 shopt -s nocaseglob
 
-# OS X bash completion
-if hash brew 2>/dev/null; then
-  if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-  fi
-fi
-
 # The `-b` flag specifies that the output of dircolors is bash specific
 if [ -x /usr/bin/dircolors ]; then
   test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 fi
 
-# Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
-# ~/.extra can be used for settings you don’t want to commit
-for file in ~/.{extra,bash_prompt,bash_exports,bash_aliases,bash_functions}; do
-  [ -r "$file" ] && source "$file"
-done
-unset file
+# Load any aliases, functions, platform-specific scripts, etc.  Relegating them
+# to ~/.bashrc.d keeps things tidy.
+# https://blog.sanctum.geek.nz/shell-config-subfiles/
+if [ -d "${HOME}"/.bashrc.d ]
+then
+  for file in "${HOME}"/.bashrc.d/*.sh; do
+    [ -r "${file}" ] && source "${file}"
+  done
+  unset file
+fi
 
 # z will take you to the most 'frecent' directory that matches ALL of the
 # regexes given on the command line, in order.
