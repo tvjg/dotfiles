@@ -1,5 +1,3 @@
-set nocompatible  " Don't emulate vi. For vim-align
-
 " Hmtl vim indent settings
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
@@ -104,7 +102,7 @@ map <Leader>f :GitFiles<CR>
 map <Leader>b :Buffers<CR>
 
 " Open vimrc for fast editing
-map <Leader>e :e! ~/.vimrc<CR> 
+map <Leader>e :e! ~/.vim/vimrc<CR> 
 
 " Write buffer out with sudo
 "   http://stackoverflow.com/a/96492/623846

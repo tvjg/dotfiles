@@ -14,7 +14,6 @@
     ~/.profile: profile
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim/
-    ~/.vimrc: vimrc
 
 - defaults:
     link:
