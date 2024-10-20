@@ -4,7 +4,7 @@ interface = eth0
 
 format-connected = <label-connected>
 
-label-connected = ﯱ
-label-disconnected = 
+label-connected = 󰛳
+label-disconnected = 󰈂
 
 ; vim:ft=dosini

@@ -7,9 +7,9 @@ use-ui-max = false
 format-volume = <ramp-volume>
 format-muted = <label-muted>
 
-label-muted = ﱝ
-ramp-volume-0 = 奄
-ramp-volume-1 = 奔
-ramp-volume-2 = 墳
+label-muted = 󰝟
+ramp-volume-0 = 󰕿
+ramp-volume-1 = 󰖀 
+ramp-volume-2 = 󰕾
 
 ; vim:ft=dosini
