@@ -183,6 +183,9 @@ bindsym $mod+Return exec i3-sensible-terminal
 ## Launch // Application // <> Space ##
 bindsym $mod+Escape exec rofi -show drun
 
+## Launch // Calculator // <> c ##
+bindsym XF86Calculator exec rofi -show calc
+
 ## Navigate // Window by Name // <><Ctrl> Space ##
 bindsym $mod+space exec rofi -show window
 
