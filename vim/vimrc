@@ -98,6 +98,7 @@ nnoremap j gj
 nnoremap k gk
 
 " fzf
+map <Leader>F :Files<CR>
 map <Leader>f :GitFiles<CR>
 map <Leader>b :Buffers<CR>
 
