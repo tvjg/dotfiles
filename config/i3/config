@@ -9,7 +9,7 @@
 ###############################################################################
 
 # Compositor
-exec --no-startup-id picom --shadow --no-dock-shadow --shadow-red 0.24 --shadow-blue 0.24 --shadow-green 0.24 -r 0 -o 0.9 -l 7 -t 7 --fading --fade-delta=8 -I 0.02 -O 0.016
+exec --no-startup-id picom
 
 # Wallpaper
 exec --no-startup-id nitrogen --restore

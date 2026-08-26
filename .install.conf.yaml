@@ -34,6 +34,7 @@
       path: config/moc/*
       glob: true
       create: true
+    ~/.config/picom: config/picom
     ~/.config/polybar: config/polybar
     ~/.config/user-dirs.dirs: config/user-dirs.dirs
     ~/.config/user-dirs.locale: config/user-dirs.locale
