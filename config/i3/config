@@ -17,6 +17,9 @@ exec --no-startup-id nitrogen --restore
 # Top Bar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
+# Automount
+exec --no-startup-id devmon
+
 ###############################################################################
 # Workspace Names
 # These are the labels which define each i3 workspace.
