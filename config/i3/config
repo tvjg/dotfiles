@@ -20,6 +20,9 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # Automount
 exec --no-startup-id devmon
 
+# Audio
+exec --no-startup-id pipewire
+
 ###############################################################################
 # Workspace Names
 # These are the labels which define each i3 workspace.
