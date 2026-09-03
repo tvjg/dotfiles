@@ -31,6 +31,13 @@ if [ -d "$HOME/.local/bin" ]; then
   export PATH="$HOME/.local/bin:$PATH"
 fi
 
+# set preferred terminal for i3-sensible-terminal
+export TERMINAL=xst
+
+# set editor preference
+export EDITOR=vim
+export VISUAL=vim
+
 # if running bash
 if [ -n "$BASH_VERSION" ]; then
     # include .bashrc if it exists
